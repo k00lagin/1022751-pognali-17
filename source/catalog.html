@@ -1,4 +1,4 @@
-{% set isInnerPage = true %}
+﻿{% set isInnerPage = true %}
 {% from "blocks/logo/logo.html" import logo %}
 <!DOCTYPE html>
 <html lang="ru">
@@ -12,7 +12,7 @@
   {% set title = "Попутчики" %}
   {% include "blocks/page-header/page-header.html" %}
 
-<main class="page-main">
+  <main class="page-main">
 
     <section class="filter-companions">
       <h2 class="filter-companions__heading">Подберите идеального попутчика</h2>
@@ -84,17 +84,17 @@
 
     <section class="filtered-companions">
       {% for companion in companions %}
-        {% include "blocks/companion/companion.html" %}
+      {% include "blocks/companion/companion.html" %}
       {% endfor %}
-	</section>
+    </section>
 
-	<div class="controls">
-		<a href="#" class="controls__more">Показать еще</a>
-		<a href="#" class="controls__previous">Предыдущая страница</a>
-		<a href="#" class="controls__next">Следующая страница</a>
-	</div>
-</main>
-{% include "blocks/page-footer/page-footer.html" %}
+    <div class="controls">
+      <a href="#" class="controls__more">Показать еще</a>
+      <a href="#" class="controls__previous">Предыдущая страница</a>
+      <a href="#" class="controls__next">Следующая страница</a>
+    </div>
+  </main>
+  {% include "blocks/page-footer/page-footer.html" %}
 </body>
 
 </html>

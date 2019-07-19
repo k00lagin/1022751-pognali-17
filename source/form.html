@@ -10,75 +10,75 @@
 </head>
 
 <body>
-{% set title = "Направления" %}
-{% include "blocks/page-header/page-header.html" %}
-<main class="page-main">
+  {% set title = "Направления" %}
+  {% include "blocks/page-header/page-header.html" %}
+  <main class="page-main">
 
-{{myprofile.name}}
+    {{myprofile.name}}
 
-{% set tags = myprofile.tags %}
-{% include "blocks/tags/tags.html" %}
+    {% set tags = myprofile.tags %}
+    {% include "blocks/tags/tags.html" %}
 
-{% set transport = myprofile.transport %}
-{% include "blocks/transport-list/transport-list.html" %}
+    {% set transport = myprofile.transport %}
+    {% include "blocks/transport-list/transport-list.html" %}
 
-<section class="schedules">
-  <h2 class="schedules__heading">Мои планы:</h2>
-  <ul class="schedules__list schedule-list">
-    {% for schedule in myprofile.schedules %}
-      {% include "blocks/schedule/schedule.html" %}
-    {% endfor %}
-  </ul>
-</section>
+    <section class="schedules">
+      <h2 class="schedules__heading">Мои планы:</h2>
+      <ul class="schedules__list schedule-list">
+        {% for schedule in myprofile.schedules %}
+        {% include "blocks/schedule/schedule.html" %}
+        {% endfor %}
+      </ul>
+    </section>
 
-<section class="new-schedule">
-  <h2 class="new-schedule__heading">Добавить план:</h2>
-  <section class="new-schedule__dates step">
-    <h3 class="step__heading">Шаг 1. Даты пребывания</h3>
-    <p class="step__description">
-      Укажите предпочтительное количество попутчиков, которых
-      вы хотели бы позвать в поездку и ее предполагаемую длительность.
-    </p>
-    <label for="schedule__companions" class="schedule__companions-label">ищу попутчиков:</label>
-    <input type="number" id="schedule__companions" class="schedule__companions" value=2>
+    <section class="new-schedule">
+      <h2 class="new-schedule__heading">Добавить план:</h2>
+      <section class="new-schedule__dates step">
+        <h3 class="step__heading">Шаг 1. Даты пребывания</h3>
+        <p class="step__description">
+          Укажите предпочтительное количество попутчиков, которых
+          вы хотели бы позвать в поездку и ее предполагаемую длительность.
+        </p>
+        <label for="schedule__companions" class="schedule__companions-label">ищу попутчиков:</label>
+        <input type="number" id="schedule__companions" class="schedule__companions" value=2>
 
-    <label for="schedule__dates" class="schedule__dates-label">Длительность:</label>
-    <input type="number" id="schedule__dates" class="schedule__dates" value=2>
+        <label for="schedule__dates" class="schedule__dates-label">Длительность:</label>
+        <input type="number" id="schedule__dates" class="schedule__dates" value=2>
 
-    <input type="checkbox" id="schedule__children-ok" class="children-ok" checked>
-    <label for="schedule__children-ok" class="schedule__children-ok-label">Можно с детьми</label>
+        <input type="checkbox" id="schedule__children-ok" class="children-ok" checked>
+        <label for="schedule__children-ok" class="schedule__children-ok-label">Можно с детьми</label>
 
-    <button type="submit" name="add-direction" class="step__next">Следующий шаг</button>
-  </section>
-  <section class="new-schedule__mars step">
-    <h3 class="step__heading">Шаг 2. Маршрут</h3>
-    <form action="#">
-      <p class="step__description">
-        Укажите страны, которые вы хотели по посетить. Это может быть одна или сразу несколько.
-      </p>
-      {{ selectDirection(2) }}
+        <button type="submit" name="add-direction" class="step__next">Следующий шаг</button>
+      </section>
+      <section class="new-schedule__mars step">
+        <h3 class="step__heading">Шаг 2. Маршрут</h3>
+        <form action="#">
+          <p class="step__description">
+            Укажите страны, которые вы хотели по посетить. Это может быть одна или сразу несколько.
+          </p>
+          {{ selectDirection(2) }}
 
-      {{ selectDirection(4) }}
-      <button type="submit" name="add-direction">Добавить страну</button>
-      <button type="submit" name="add-direction" class="step__next">Следующий шаг</button>
-      <button type="submit" name="add-direction" class="step__previous">На шаг назад</button>
-    </form>
-  </section>
-  <section class="new-schedule__mars step">
-    <h3 class="step__heading">Шаг 3. Развлечения</h3>
-      <p class="step__description">
-        Наконец, расскажите о своих планах времяпровождения.
-        Можно писать в свободной форме и ставить тэги.
-      </p>
-      h4
-    <button type="submit" class="step__next">Отправить</button>
-    <button type="submit" name="add-direction" class="step__previous">На шаг назад</button>
-  </section>
-</section>
+          {{ selectDirection(4) }}
+          <button type="submit" name="add-direction">Добавить страну</button>
+          <button type="submit" name="add-direction" class="step__next">Следующий шаг</button>
+          <button type="submit" name="add-direction" class="step__previous">На шаг назад</button>
+        </form>
+      </section>
+      <section class="new-schedule__mars step">
+        <h3 class="step__heading">Шаг 3. Развлечения</h3>
+        <p class="step__description">
+          Наконец, расскажите о своих планах времяпровождения.
+          Можно писать в свободной форме и ставить тэги.
+        </p>
+        h4
+        <button type="submit" class="step__next">Отправить</button>
+        <button type="submit" name="add-direction" class="step__previous">На шаг назад</button>
+      </section>
+    </section>
 
 
-</main>
-{% include "blocks/page-footer/page-footer.html" %}
+  </main>
+  {% include "blocks/page-footer/page-footer.html" %}
 </body>
 
 </html>

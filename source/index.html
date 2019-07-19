@@ -8,8 +8,8 @@
 </head>
 
 <body>
-  	{% set title = "Сайт поиска попутчиков «Погнали»" %}
-	{% include "blocks/page-header/page-header.html" %}
+  {% set title = "Сайт поиска попутчиков «Погнали»" %}
+  {% include "blocks/page-header/page-header.html" %}
   <main class="page-main">
     <section class="first-screen">
       <b class="first-screen__slogan">В путешествие с крутыми попутчиками!</b>
@@ -99,14 +99,14 @@
       <p class="companions__action">
         Теперь можно легко найти единомышленников!
       </p>
-		<ul class="companions__list companions-list">
-			{% set featured = true %}
-			{% for companion in [companions[0], companions[1]] %}
-				{% include "blocks/companion/companion.html" %}
-			{% endfor %}
-		</ul>
+      <ul class="companions__list companions-list">
+        {% set featured = true %}
+        {% for companion in [companions[0], companions[1]] %}
+        {% include "blocks/companion/companion.html" %}
+        {% endfor %}
+      </ul>
       <a href="#" class="companions__show-all button">Показать всех</a>
-	</section>
+    </section>
 
     <section class="tariffs">
       <h2 class="tariffs__heading">Добавтьте свой профиль</h2>
@@ -176,8 +176,9 @@
 
       <form action="#" aria-label="Форма регистрации">
         <input type="text" class="calls-to-action__registration-email" aria-label="Электронная почта" name="email">
-        <button type="submit" class="calls-to-action__register"><span
-            class="visually-hidden">Зарегистрироваться</span></button>
+        <button type="submit" class="calls-to-action__register">
+          <span class="visually-hidden">Зарегистрироваться</span>
+        </button>
       </form>
 
       <section class="calls-to-action__call-to-reach reach-us">
@@ -205,7 +206,7 @@
       <img src="#" alt="" class="locate-us__map">
     </section>
 
-{% include "blocks/page-footer/page-footer.html" %}
+    {% include "blocks/page-footer/page-footer.html" %}
 </body>
 
 </html>

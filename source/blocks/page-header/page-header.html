@@ -6,11 +6,7 @@
       <div class="main-nav__wrapper">
         <ul class="main-nav__list site-list">
           <li class="site-list__item site-list__item--active">
-            {% if inner %}
-            <a href="index.html">О Сервисе</a>
-            {% else %}
-            <a>О Сервисе</a>
-            {% endif %}
+            <a {% if isInnerPage %}href="index.html" {% endif %}>О Сервисе</a>
           </li>
           <li class="site-list__item">
             <a href="form.html">Направления</a>

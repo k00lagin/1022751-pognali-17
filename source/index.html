@@ -132,34 +132,35 @@
           <td class="service__price">от 20 коп./лайк</td>
         </tr>
       </table>
-      <button class="tariffs__show-business-tariffs">Показать тарифы для бизнеса</button>
-    </section>
-
-    <section class="business-tariffs">
-      <h2 class="business-tariffs__heading">Бизнес-тарифы</h2>
-      <table class="business-tariffs__table">
-        <tr class="visually-hidden">
-          <td>Услуга</td>
-          <td>Цена</td>
-        </tr>
-        <tr class="business-tariffs__service service">
-          <td class="service__name">Реклама у блоггера</td>
-          <td class="service__price">300 000 руб./пост</td>
-        </tr>
-        <tr>
-          <td class="service__name">Накрутка подписчиков</td>
-          <td class="service__price">от 1 руб./шт.</td>
-        </tr>
-        <tr>
-          <td class="service__name">Лайки от ботов</td>
-          <td class="service__price">от 20 коп./лайк</td>
-        </tr>
-        <tr>
-          <td class="service__name">Ваш продакт-плейсмент</td>
-          <td class="service__price">Индивидуально</td>
-        </tr>
-      </table>
-      <button class="business-tariffs__close">Закрыть окно</button>
+      <details>
+        <summary class="tariffs__show-business-tariffs button">Показать тарифы для бизнеса</summary>
+        <section class="business-tariffs">
+          <h2 class="business-tariffs__heading">Бизнес-тарифы</h2>
+          <table class="business-tariffs__table">
+            <tr class="visually-hidden">
+              <td>Услуга</td>
+              <td>Цена</td>
+            </tr>
+            <tr class="business-tariffs__service service">
+              <td class="service__name">Реклама у блоггера</td>
+              <td class="service__price">300 000 руб./пост</td>
+            </tr>
+            <tr>
+              <td class="service__name">Накрутка подписчиков</td>
+              <td class="service__price">от 1 руб./шт.</td>
+            </tr>
+            <tr>
+              <td class="service__name">Лайки от ботов</td>
+              <td class="service__price">от 20 коп./лайк</td>
+            </tr>
+            <tr>
+              <td class="service__name">Ваш продакт-плейсмент</td>
+              <td class="service__price">Индивидуально</td>
+            </tr>
+          </table>
+          <!-- <button class="business-tariffs__close">Закрыть окно</button> will be pseudoelement of summary -->
+        </section>
+      </details>
     </section>
 
     <section class="calls-to-action">

@@ -1,0 +1,99 @@
+﻿{% set inner = true %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>Сайт поиска попутчиков «Погнали» | Попутчики</title>
+</head>
+
+<body>
+  {% set title = "Попутчики" %}
+  {% include "blocks/page-header/page-header.html" %}
+
+<main class="page-main">
+
+    <section class="filter-companions">
+      <h2 class="filter-companions__heading">Подберите идеального попутчика</h2>
+
+      <form action="">
+
+        <details class="filter-companions__by-hobby filter-by-hobby">
+          <summary id="filter-companions__by-hobby" class="filter-by-hobby__title">Хобби</summary>
+          <fieldset>
+            <legend aria-labelledby="filter-companions__by-hobby" class="visually-hidden"></legend>
+            <input type="checkbox" name="hobby" id="hobby--option-1">
+            <label for="hobby--option-1">Первая опция</label>
+            <input type="checkbox" name="hobby" id="hobby--option-2">
+            <label for="hobby--option-2">Вторая опция</label>
+          </fieldset>
+        </details>
+
+        <details class="filter-companions__by-music-taste filter-by-music">
+          <summary id="filter-companions__by-music-taste" class="filter-by-music__title">Музыка</summary>
+          <fieldset>
+            <legend aria-labelledby="filter-companions__by-music-taste" class="visually-hidden"></legend>
+            <input type="checkbox" name="music" id="music--hard-rock">
+            <label for="music--hard-rock">Тяжелый рок</label>
+            <input type="checkbox" name="music" id="music--russian-rap">
+            <label for="music--russian-rap">Русский рэп</label>
+            <input type="checkbox" name="music" id="music--eurodance">
+            <label for="music--eurodance">Евроденс</label>
+          </fieldset>
+        </details>
+
+        <details class="filter-companions__by-food filter-by-food">
+          <summary id="filter-companions__by-food" class="filter-by-food__title">Еда</summary>
+          <fieldset>
+            <legend aria-labelledby="filter-companions__by-food" class="visually-hidden"></legend>
+            <input type="checkbox" name="food" id="food--option-1">
+            <label for="food--option-1">Первая опция</label>
+            <input type="checkbox" name="food" id="food--option-2">
+            <label for="food--option-2">Вторая опция</label>
+          </fieldset>
+        </details>
+
+        <details class="filter-companions__by-transport filter-by-transport">
+          <summary id="filter-companions__by-transport" class="filter-by-transport__title">Транспорт</summary>
+          <fieldset>
+            <legend aria-labelledby="filter-companions__by-transport" class="visually-hidden"></legend>
+            <input type="checkbox" name="transport" id="transport--plane">
+            <label for="transport--plane">Самолётом</label>
+            <input type="checkbox" name="transport" id="transport--bus">
+            <label for="transport--bus">На автобусе</label>
+            <input type="checkbox" name="transport" id="transport--bike">
+            <label for="transport--bike">На велосипеде</label>
+            <input type="checkbox" name="transport" id="transport--foot">
+            <label for="transport--foot">Пешком</label>
+          </fieldset>
+        </details>
+
+        <details class="filter-companions__by-level filter-by-level">
+          <summary id="filter-companions__by-level" class="filter-by-level__title">Левел</summary>
+          <fieldset>
+            <legend aria-labelledby="filter-companions__by-level" class="visually-hidden"></legend>
+            <input type="text" name="level" id="level--min" aria-label="Минимальный уровень">
+            <input type="text" name="level" id="level--max" aria-label="Максимальный уровень">
+          </fieldset>
+        </details>
+
+        <button type="submit" class="filter-companions__submit">Показать</button>
+      </form>
+    </section>
+
+    <section class="filtered-companions">
+      {% for companion in companions %}
+        {% include "blocks/companion/companion.html" %}
+      {% endfor %}
+	</section>
+
+	<div class="controls">
+		<a href="#" class="controls__more">Показать еще</a>
+		<a href="#" class="controls__previous">Предыдущая страница</a>
+		<a href="#" class="controls__next">Следующая страница</a>
+	</div>
+</main>
+{% include "blocks/page-footer/page-footer.html" %}
+</body>
+
+</html>

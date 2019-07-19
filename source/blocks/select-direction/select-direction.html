@@ -1,0 +1,18 @@
+{% macro selectDirection(selected) %}
+{% set countries = [
+	"Босния и герцеговина",
+	"Чехословакия",
+	"Боливия",
+	"Гондурас",
+	"Алжир",
+	"Венесуэла"
+] %}
+<div class="select-direction">
+	<ul class="select-direction__list country-list">
+		<li class="country-list__item">Выберите страну</li>
+		{% for country in countries %}
+		<li class="country-list__item{% if loop.index0 == selected %} selected{% endif %}">{{ country }}</li>
+		{% endfor %}
+	</ul>
+</div>
+{% endmacro %}

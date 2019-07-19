@@ -7,60 +7,8 @@
 </head>
 
 <body>
-  <header class="page-header">
-    <a class="page-header__logo">
-      <img class="page-header__logo-image" src="img/logotype-mobile.svg" width="100" height="19"
-        alt="Сайт поиска попутчиков «Погнали»">
-    </a>
-    <nav class="main-nav">
-      <button class="main-nav__toggle" type="button">Открыть меню</button>
-      <div class="main-nav__wrapper">
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item site-list__item--active">
-            <a>О Сервисе</a>
-          </li>
-          <li class="site-list__item">
-            <a href="form.html">Направления</a>
-          </li>
-          <li class="site-list__item">
-            <a href="catalog.html">Попутчики</a>
-          </li>
-        </ul>
-        <ul class="main-nav__list user-list">
-          <li class="user-list__item">
-            <a class="user-list__login" href="login.html">Авторизация</a>
-          </li>
-        </ul>
-        <ul class="main-nav__list reach-list">
-          <li class="reach-list__item">
-            <a class="reach-list__phone" href="tel:+78005558628">8 800 555-86-28</a>
-          </li>
-          <li class="reach-list__item">
-            <a class="reach-list__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-          </li>
-        </ul>
-        <ul class="main-nav__social-list social-list">
-            <li class="social-list__item">
-                <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com/htmlacademy"><span
-                    class="visually-hidden">Мы в
-                    Фейсбуке</span></a>
-              </li>
-              <li class="social-list__item">
-                <a class="social-list__link social-list__link--vkontakte" href="https://vk.com/htmlacademy"><span
-                    class="visually-hidden">Мы во
-                    Вконтакте</span></a>
-              </li>
-              <li class="social-list__item">
-                <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com/htmlacademy"><span
-                    class="visually-hidden">Мы в
-                    Инстаграме</span></a>
-              </li>
-        </ul>
-      </div>
-    </nav>
-    <h1 class="page-header__heading visually-hidden">Сайт поиска попутчиков «Погнали»</h1>
-  </header>
-
+  	{% set title = "Сайт поиска попутчиков «Погнали»" %}
+	{% include "blocks/page-header/page-header.html" %}
   <main class="page-main">
     <section class="first-screen">
       <b class="first-screen__slogan">В путешествие с крутыми попутчиками!</b>
@@ -149,103 +97,15 @@
       <p class="companions__action">
         Теперь можно легко найти единомышленников!
       </p>
+		<ul class="companions__list companions-list">
+			{% set featured = true %}
+			{% for companion in [companions[0], companions[1]] %}
+				{% include "blocks/companion/companion.html" %}
+			{% endfor %}
+		</ul>
+		<button class="companions__show-all button">Показать всех</button>
+	</section>
 
-      <ul class="companions__list companions-list">
-        <li class="companions-list__item companion">
-          <div class="companion__level-wrap level">
-            <span class="level__value">99</span>
-            <!--
-
-              here is the adopted technic which I believe was originally presented by Lea Verou in "Designing A Flexible, Maintainable CSS Pie Chart With SVG" (smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css)
-
-              level__segment radius is sR = 15.915494309189533  (100 / Math.PI / 2)
-              we desire circle R = 30 and stroke = 3, so
-              level__segment stroke sS = 15.915494309189533 * 3 / 30 = 1.5915494309189533
-              level__backdrop radius is bR = sR + sS/2 = 16.71126902464901
-              scale factor is R / bR
-             -->
-            <svg width="60px" height="60px" class="level__chart">
-              <circle class="level__backdrop" cx="50%" cy="50%" r="16.71126902464901" fill="#000000" fill-opacity="0.6" transform="scale(1.7951958020513106)" transform-origin="center">
-              </circle>
-              <circle class="level__segment" cx="50%" cy="50%" r="15.915494309189533" fill="transparent"
-                stroke="#ff8d30" stroke-width="1.5915494309189533" stroke-dasharray="99 1" stroke-dashoffset="25" transform="scale(1.7951958020513106)" transform-origin="center">
-              </circle>
-            </svg>
-          </div>
-
-          <img src="" alt="" class="companion__photo">
-          <ul class="companion__directions companion-directions" aria-label="Хочет отправиться в страны:">
-            <li class="companion-directions__item companion-directions__item--sri-lanka"><span
-                class="visually-hidden">Шри-Ланка</span></li>
-            <li class="companion-directions__item companion-directions__item--thailand"><span
-                class="visually-hidden">Тайланд</span></li>
-            <li class="companion-directions__item companion-directions__item--seychelles"><span
-                class="visually-hidden">Сейшелы</span></li>
-          </ul>
-          <h3 class="companion__name companion__name--offline">Таня Фирсова</h3>
-          <ul class="companion__tags tags">
-            <li class="tags__item"><a href="#" class="tags__link">ЗОЖ</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">ПП</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">Фитнес</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">пляж</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">авокадо</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">смузи</a></li>
-          </ul>
-          <ul class="companion__transport-list transport-list">
-            <li class="transport-list__item transport-list__item--plane transport-list__item--active"><span
-                class="visually-hidden">Хочет путешествовать самолётом</span></li>
-            <li class="transport-list__item transport-list__item--bus"><span class="visually-hidden">Не хочет
-                путешествовать на автобусе</span></li>
-            <li class="transport-list__item transport-list__item--bike"><span class="visually-hidden">Не хочет
-                путешествовать на велосипеде</span></li>
-            <li class="transport-list__item transport-list__item--foot"><span class="visually-hidden">Не хочет
-                путешествовать пешком</span></li>
-          </ul>
-        </li>
-
-        <li class="companions-list__item companion">
-          <div class="companion__level-wrap level">
-            <span class="level__value">80</span>
-            <svg width="60px" height="60px" class="level__chart">
-              <circle class="level__backdrop" cx="50%" cy="50%" r="16.71126902464901" fill="#000000" fill-opacity="0.6" transform="scale(1.7951958020513106)" transform-origin="center">
-              </circle>
-              <circle class="level__segment" cx="50%" cy="50%" r="15.915494309189533" fill="transparent"
-                stroke="#ff8d30" stroke-width="1.5915494309189533" stroke-dasharray="80 20" stroke-dashoffset="25" transform="scale(1.7951958020513106)" transform-origin="center">
-              </circle>
-            </svg>
-          </div>
-
-          <img src="" alt="" class="companion__photo">
-          <ul class="companion__directions companion-directions" aria-label="Хочет отправиться в страны:">
-            <li class="companion-directions__item companion-directions__item--belgium"><span
-                class="visually-hidden">Бельгия</span></li>
-            <li class="companion-directions__item companion-directions__item--czech"><span
-                class="visually-hidden">Чехия</span></li>
-          </ul>
-          <h3 class="companion__name companion__name--online">Петя Демин</h3>
-          <ul class="companion__tags tags">
-            <li class="tags__item"><a href="#" class="tags__link">бургер</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">бар</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">футбол</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">концерт</a></li>
-            <li class="tags__item"><a href="#" class="tags__link">крафт</a></li>
-          </ul>
-          <ul class="companion__transport-list transport-list">
-            <li class="transport-list__item transport-list__item--plane transport-list__item--active"><span
-                class="visually-hidden">Хочет путешествовать самолётом</span></li>
-            <li class="transport-list__item transport-list__item--bus transport-list__item--active"><span
-                class="visually-hidden">Хочет
-                путешествовать на автобусе</span></li>
-            <li class="transport-list__item transport-list__item--bike"><span class="visually-hidden">Не хочет
-                путешествовать на велосипеде</span></li>
-            <li class="transport-list__item transport-list__item--foot transport-list__item--active"><span
-                class="visually-hidden">Хочет
-                путешествовать пешком</span></li>
-          </ul>
-        </li>
-      </ul>
-      <button class="companions__show-all button">Показать всех</button>
-    </section>
     <section class="tariffs">
       <h2 class="tariffs__heading">Добавтьте свой профиль</h2>
       <table class="tariffs__table">
@@ -342,34 +202,7 @@
       <img src="#" alt="" class="locate-us__map">
     </section>
 
-    <footer class="page-footer">
-      <a class="page-footer__logo">
-        <img class="page-footer__logo-image" src="img/logotype-mobile.svg" width="96" height="15"
-          alt="Сайт поиска попутчиков «Погнали»">
-      </a>
-      <ul class="page-footer__social-list social-list">
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com/htmlacademy"><span
-              class="visually-hidden">Мы в
-              Фейсбуке</span></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--vkontakte" href="https://vk.com/htmlacademy"><span
-              class="visually-hidden">Мы во
-              Вконтакте</span></a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com/htmlacademy"><span
-              class="visually-hidden">Мы в
-              Инстаграме</span></a>
-        </li>
-      </ul>
-      <section class="page-footer__copyright copyright">
-        <span class="copyright__text">Разработано</span>
-        <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive"><span class="visually-hidden">HTML
-            Academy</span></a>
-      </section>
-    </footer>
+{% include "blocks/page-footer/page-footer.html" %}
 </body>
 
 </html>

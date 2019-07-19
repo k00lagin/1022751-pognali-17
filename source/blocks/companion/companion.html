@@ -1,0 +1,25 @@
+<li class="companions-list__item companion{% if featured %} companion--featured{% endif %}">
+    <div class="companion__level-wrap level">
+      <span class="level__value">{{ companion.level }}</span>
+      <svg width="60px" height="60px" class="level__chart">
+        <circle class="level__backdrop" cx="50%" cy="50%" r="16.71126902464901" fill="#000000" fill-opacity="0.6"
+          transform="scale(1.7951958020513106)" transform-origin="center">
+        </circle>
+        <circle class="level__segment" cx="50%" cy="50%" r="15.915494309189533" fill="transparent"
+          stroke="#ff8d30" stroke-width="1.5915494309189533" stroke-dasharray="{{ companion.level }} {{ 100 -  companion.level }}" stroke-dashoffset="25"
+          transform="scale(1.7951958020513106)" transform-origin="center">
+        </circle>
+      </svg>
+    </div>
+    <img src="#" alt="" class="companion__photo">
+  {% set directions = companion.directions %}
+  {% include "blocks/companion-directions/companion-directions.html" %}
+  <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
+  {% set transport = companion.transport %}
+  {% include "blocks/transport-list/transport-list.html" %}
+  {% set tags = companion.tags %}
+  {% include "blocks/tags/tags.html" %}
+  {% if companion.invitable %}
+  <a href="#" class="button companion__invitable">Позвать!</a>
+  {% endif %}
+</li>

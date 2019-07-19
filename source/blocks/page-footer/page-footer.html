@@ -1,12 +1,5 @@
 <footer class="page-footer">
-  {% if inner %}
-  <a class="page-footer__logo" href="index.html">
-  {% else %}
-  <a class="page-footer__logo">
-  {% endif %}
-    <img class="page-footer__logo-image" src="img/logotype-mobile.svg" width="96" height="15"
-      alt="Сайт поиска попутчиков «Погнали»">
-  </a>
+  {{ logo("page-footer", "96", "15", isInnerPage) }}
   <ul class="page-footer__social-list social-list">
     <li class="social-list__item">
       <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com/htmlacademy"><span

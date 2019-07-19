@@ -1,0 +1,6 @@
+{% macro logo(parent, width, height, isInnerPage = false) %}
+<a class="{{parent}}__logo logo" {% if isInnerPage %}href="index.html" {% endif %}>
+  <img class="logo__image" src="img/logotype-mobile.svg" width="{{width}}" height="{{height}}"
+    alt="Сайт поиска попутчиков «Погнали»">
+</a>
+{% endmacro %}

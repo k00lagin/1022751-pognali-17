@@ -1,12 +1,5 @@
 <header class="page-header">
-  {% if inner %}
-  <a class="page-header__logo" href="index.html">
-  {% else %}
-  <a class="page-header__logo">
-  {% endif %}
-    <img class="page-header__logo-image" src="img/logotype-mobile.svg" width="100" height="19"
-      alt="Сайт поиска попутчиков «Погнали»">
-  </a>
+  {{ logo("page-header", "100", "19", isInnerPage) }}
   <nav class="main-nav">
     <details>
       <summary class="main-nav__toggle" aria-role="button" aria-haspopup="menu">Открыть меню</summary>

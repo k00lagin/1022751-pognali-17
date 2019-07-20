@@ -15,14 +15,20 @@
   {% include "blocks/page-header/page-header.html" %}
   <main class="page-main">
 
-    {{myprofile.name}}
+    <section class="my-profile">
       {{ level("my-profile", 80, 50, 3) }}
+
+      <!-- adopt machine learning to provide more relevant image alts -->
+      <img src="img/{{myprofile.avatar}}-mobile@1x.jpg" alt="Аватарка" class="my-profile__avatar">
+
+      <a href="#" class="my-profile__change-avatar button">Сменить фото</a>
 
     {% set tags = myprofile.tags %}
     {% include "blocks/tags/tags.html" %}
 
     {% set transport = myprofile.transport %}
     {% include "blocks/transport-list/transport-list.html" %}
+    </section>
 
     <section class="schedules">
       <h2 class="schedules__heading">Мои планы:</h2>

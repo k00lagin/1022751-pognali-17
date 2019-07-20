@@ -1,0 +1,82 @@
+{
+  "companions": [{
+      "avatar": "firsova",
+      "name": "Таня Фирсова",
+      "n": "1,5 m",
+      "tags": ["ЗОЖ", "ПП", "Фитнес", "пляж", "авокадо", "смузи"],
+      "directions": ["Sri-Lanka", "Thailand", "Seychelles"],
+      "transport": {
+        "plane": true
+      },
+      "level": 99
+    },
+
+    {
+      "avatar": "demin",
+      "name": "Петя Демин",
+      "n": "150",
+      "tags": ["бургер", "бар", "футбол", "концерт", "крафт"],
+      "directions": ["Belgium", "Czech"],
+      "transport": {
+        "plane": true,
+        "bus": true,
+        "foot": true
+      },
+      "level": 80
+    },
+
+    {
+      "avatar": "smolov",
+      "name": "Марк Смолов",
+      "n": "1700",
+      "tags": ["рэп", "тату", "хайпбист", "кроссовки", "суприм"],
+      "directions": ["USA", "Australia", "Dominica"],
+      "transport": {
+        "plane": true,
+        "bike": true
+      },
+      "level": 25
+    },
+
+    {
+      "avatar": "rogovaya",
+      "name": "Лариса Роговая",
+      "n": "23",
+      "tags": ["образование", "карьера", "учеба", "линкедин"],
+      "directions": ["United-Kingdom", "Germany"],
+      "transport": {
+        "plane": true,
+        "bus": true
+      },
+      "level": 50
+    }
+  ],
+  "myprofile": {
+    "avatar": "demin",
+    "name": "Петя Демин",
+    "n": "150",
+    "tags": ["бургер", "бар", "футбол", "концерт", "крафт"],
+    "directions": ["Belgium", "Czech"],
+    "transport": {
+      "plane": true,
+      "bus": true,
+      "foot": true
+    },
+    "level": 80,
+    "schedules": [{
+        "title": "Франция, Италия",
+        "companions": "3 попутчика",
+        "start": "2019-03-26",
+        "end": "2019-03-29",
+        "dates": "26 мар — 29 мар"
+      },
+      {
+        "title": "Тайланд, Индонезия",
+        "companions": "1 попутчик",
+        "start": "2019-06-01",
+        "end": "2019-06-15",
+        "dates": "1 июл — 15 июл"
+      }
+    ]
+  }
+}

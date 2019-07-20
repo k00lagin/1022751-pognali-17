@@ -1,12 +1,214 @@
+{%- from "blocks/logo/logo.html" import logo -%}
+{%- from "blocks/level/level.html" import level -%}
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Погнали</title>
-  </head>
-  <body>
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS, уровень 2</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <title>Сайт поиска попутчиков «Погнали»</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  </body>
+<body>
+  {%- set title = "Сайт поиска попутчиков «Погнали»" -%}
+  {% include "blocks/page-header/page-header.html" %}
+  <main class="page-main">
+    <section class="first-screen">
+      <b class="first-screen__slogan">В путешествие с крутыми попутчиками!</b>
+      <ul class="first-screen__reach-n-user-list reach-n-user-list">
+        <li class="reach-n-user-list__item">
+          <a class="reach-n-user-list__link reach-n-user-list__link--phone" href="tel:+78005558628">8 800 555-86-28</a>
+        </li>
+        <li class="reach-n-user-list__item">
+          <a class="reach-n-user-list__link reach-n-user-list__link--email"
+            href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+        </li>
+        <li class="reach-n-user-list__item">
+          <a class="reach-n-user-list__link reach-n-user-list__link--auth" href="login.html">Авторизация</a>
+        </li>
+      </ul>
+
+      <blockquote class="first-screen__review review">
+        <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
+        <cite class="review__author">Мурат&nbsp;Эльтазин главный редактор газеты «гаджетлайф»</cite>
+      </blockquote>
+
+      <ol class="first-screen__steps steps">
+        <li class="steps__item">Выберите направление</li>
+        <li class="steps__item">Изучите идеи путешественников</li>
+        <li class="steps__item">Находите тех, кто похож на вас</li>
+        <li class="steps__item">Путешествуйте вместе!</li>
+      </ol>
+
+      <section class="first-screen__about-service about-service">
+        <h2 class="about-service__heading">О сервисе</h2>
+
+        <p class="about-service__description">
+          Любое путешествие веселее
+          с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в
+          чужих.
+        </p>
+
+        <p class="about-service__action">
+          А если найдете кого-то
+          близкого по духу — скорее
+          зовите в совместный трип!
+        </p>
+      </section>
+    </section>
+
+    <section class="directions">
+      <h2 class="directions__heading">Направления</h2>
+
+      <p class="directions__disclaimer">
+        Мы не продаем туры
+        и ничего не рекламируем.
+        Люди сами пишут о странах, куда хотели бы отправиться
+        и чем можно там заняться.
+      </p>
+
+      <ul class="directions__list direction-list">
+        <li class="direction-list__item direction">
+          <img src="#" alt="Острова посреди моря" class="direction__cover">
+          <h3 class="direction__title">Тайланд</h3>
+          <span class="direction__slogan">Джугли зовут!</span>
+          <span class="direction__travellers">18321</span>
+        </li>
+        <li class="direction-list__item direction">
+          <img src="#" alt="Острова посреди моря" class="direction__cover">
+          <h3 class="direction__title">Франция</h3>
+          <span class="direction__slogan">Трэ бьен, манифик!</span>
+          <span class="direction__travellers">12518</span>
+        </li>
+        <li class="direction-list__item direction">
+          <img src="#" alt="Острова посреди моря" class="direction__cover">
+          <h3 class="direction__title">Чехия</h3>
+          <span class="direction__slogan">Закоулки старой Европы</span>
+          <span class="direction__travellers">5326</span>
+        </li>
+      </ul>
+      <a href="#" class="directions__show-all button">Показать все</a>
+    </section>
+
+    <section class="companions">
+      <h2 class="companoins__heading">Попутчики</h2>
+
+      <p class="companions__description">
+        Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут
+        для хайкинга.
+      </p>
+
+      <p class="companions__action">
+        Теперь можно легко найти единомышленников!
+      </p>
+      <ul class="companions__list companions-list">
+        {%- set featured = true -%}
+        {% for companion in [companions[0], companions[1]] %}
+        {% include "blocks/companion/companion.html" %}
+        {% endfor %}
+      </ul>
+      <a href="#" class="companions__show-all button">Показать всех</a>
+    </section>
+
+    <section class="tariffs">
+      <h2 class="tariffs__heading">Добавтьте свой профиль</h2>
+      <table class="tariffs__table">
+        <tr class="visually-hidden">
+          <td>Номер</td>
+          <td>Услуга</td>
+          <td>Цена</td>
+        </tr>
+        <tr class="tariffs__service service">
+          <td class="service__number">1</td>
+          <td class="service__name">Базовое размещение</td>
+          <td class="service__price">Бесплатно</td>
+        </tr>
+        <tr class="tariffs__service service">
+          <td class="service__number">2</td>
+          <td class="service__name">Вывод на первых позициях</td>
+          <td class="service__price">99 руб./мес</td>
+        </tr>
+        <tr class="tariffs__service service">
+          <td class="service__number">3</td>
+          <td class="service__name">Кастомный цвет карточки</td>
+          <td class="service__price">от 20 коп./лайк</td>
+        </tr>
+      </table>
+      <details>
+        <summary class="tariffs__show-business-tariffs button">Показать тарифы для бизнеса</summary>
+        <section class="business-tariffs">
+          <h2 class="business-tariffs__heading">Бизнес-тарифы</h2>
+          <table class="business-tariffs__table">
+            <tr class="visually-hidden">
+              <td>Услуга</td>
+              <td>Цена</td>
+            </tr>
+            <tr class="business-tariffs__service service">
+              <td class="service__name">Реклама у блоггера</td>
+              <td class="service__price">300 000 руб./пост</td>
+            </tr>
+            <tr>
+              <td class="service__name">Накрутка подписчиков</td>
+              <td class="service__price">от 1 руб./шт.</td>
+            </tr>
+            <tr>
+              <td class="service__name">Лайки от ботов</td>
+              <td class="service__price">от 20 коп./лайк</td>
+            </tr>
+            <tr>
+              <td class="service__name">Ваш продакт-плейсмент</td>
+              <td class="service__price">Индивидуально</td>
+            </tr>
+          </table>
+          <!-- <button class="business-tariffs__close">Закрыть окно</button> will be pseudoelement of summary -->
+        </section>
+      </details>
+    </section>
+
+    <section class="calls-to-action">
+      <h2 class="calls-to-action__heading">Заинтересовались?</h2>
+
+      <p class="calls-to-action__call-to-register">
+        Зарегистрируйтесь,
+        это быстро и бесплатно!
+      </p>
+      <p class="calls-to-action__call-to-auth">
+        Уже зарегистрированы? Тогда скорее <a href="#" class="calls-to-action__auth-link">авторизуйтесь</a>.
+      </p>
+
+      <form action="https://echo.htmlacademy.ru" aria-label="Форма регистрации">
+        <input type="text" class="calls-to-action__registration-email" aria-label="Электронная почта" name="email">
+        <button type="submit" class="calls-to-action__register">
+          <span class="visually-hidden">Зарегистрироваться</span>
+        </button>
+      </form>
+
+      <section class="calls-to-action__call-to-reach reach-us">
+        <p class="reach-us__message">
+          Остались вопросы?
+          Мы с радостью на них ответим!
+        </p>
+        <ul class="reach-us__list reach-list">
+          <li class="reach-list__item">
+            <a class="reach-list__phone" href="tel:+78005558628">8 800 555-86-28</a>
+          </li>
+          <li class="reach-list__item">
+            <a class="reach-list__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <section class="locate-us">
+      <address class="locate-us__address">
+        ул. Большая
+        Конюшенная, 19/8
+      </address>
+      <a href="#" class="locate-us__button button button--hollow">Проложить маршрут</a>
+      <img src="#" alt="" class="locate-us__map">
+    </section>
+
+    {% include "blocks/page-footer/page-footer.html" %}
+</body>
+
 </html>

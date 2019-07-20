@@ -1,0 +1,32 @@
+{#<!--
+  here is the adopted technic which I believe was originally presented by Lea Verou in "Designing A Flexible, Maintainable
+  CSS Pie Chart With SVG" (smashingmagazine.com/2015/07/designing-simple-pie-charts-with-css)
+
+  level__segment radius is sR = 15.915494309189533 (100 / Math.PI / 2)
+  we desire circle R = 30 and stroke = 3, so
+  level__segment stroke sS = 15.915494309189533 * 3 / 30 = 1.5915494309189533
+  level__backdrop radius is bR = sR + sS/2 = 16.71126902464901
+  scale factor is R / bR
+-->#}
+{% macro level(parent, value, desiredR = 30, desiredStrokeWidth = 3) %}
+
+{%- set width = desiredR *2 -%}
+{%- set height = desiredR *2 -%}
+{%- set innerRadius = 15.915494309189533 -%}
+{%- set strokeWidth = innerRadius * desiredStrokeWidth / desiredR -%}
+{%- set outerRadius = 15.915494309189533 + strokeWidth / 2 -%}
+{%- set scale = desiredR / outerRadius -%}
+
+<div class="{{parent}}__level-wrap level">
+  <span class="level__value">{{ value }}</span>
+  <svg width="{{ width }}px" height="{{ height }}px" class="level__chart">
+    <circle class="level__backdrop" cx="50%" cy="50%" r="{{outerRadius}}" fill="#000000" fill-opacity="0.6"
+      transform="scale({{scale}})" transform-origin="center">
+    </circle>
+    <circle class="level__segment" cx="50%" cy="50%" r="{{innerRadius}}" fill="transparent" stroke="#ff8d30"
+      stroke-width="{{strokeWidth}}" stroke-dasharray="{{ value }} {{ 100 - value }}" stroke-dashoffset="25"
+      transform="scale({{scale}})" transform-origin="center">
+    </circle>
+  </svg>
+</div>
+{% endmacro %}

@@ -1,41 +1,41 @@
 <ul class="companion__transport-list transport-list">
-{% if transport.plane %}
+  {% if transport.plane %}
   <li class="transport-list__item transport-list__item--plane transport-list__item--active">
     <span class="visually-hidden">Хочет путешествовать самолётом</span>
   </li>
-{% else %}
+  {% else %}
   <li class="transport-list__item transport-list__item--plane">
     <span class="visually-hidden">Не хочет путешествовать самолётом</span>
   </li>
-{% endif %}
+  {% endif %}
 
-{% if transport.bus %}
+  {% if transport.bus %}
   <li class="transport-list__item transport-list__item--bus transport-list__item--active">
     <span class="visually-hidden">Хочет путешествовать на автобусе</span>
   </li>
-{% else %}
+  {% else %}
   <li class="transport-list__item transport-list__item--bus">
     <span class="visually-hidden">Не хочет путешествовать на автобусе</span>
   </li>
-{% endif %}
+  {% endif %}
 
-{% if transport.bike %}
+  {% if transport.bike %}
   <li class="transport-list__item transport-list__item--bike transport-list__item--active">
     <span class="visually-hidden">Хочет путешествовать на велосипеде</span>
   </li>
-{% else %}
+  {% else %}
   <li class="transport-list__item transport-list__item--bike">
     <span class="visually-hidden">Не хочет путешествовать на велосипеде</span>
   </li>
-{% endif %}
+  {% endif %}
 
-{% if transport.foot %}
+  {% if transport.foot %}
   <li class="transport-list__item transport-list__item--foot transport-list__item--active">
     <span class="visually-hidden">Хочет путешествовать пешком</span>
   </li>
-{% else %}
+  {% else %}
   <li class="transport-list__item transport-list__item--foot">
     <span class="visually-hidden">Не хочет путешествовать пешком</span>
   </li>
-{% endif %}
+  {% endif %}
 </ul>

@@ -24,11 +24,11 @@
 
       <a href="#" class="my-profile__change-avatar button">Сменить фото</a>
 
-    {%- set tags = myprofile.tags -%}
-    {% include "blocks/tags/tags.html" %}
+      {%- set tags = myprofile.tags -%}
+      {% include "blocks/tags/tags.html" %}
 
-    {%- set transport = myprofile.transport -%}
-    {% include "blocks/transport-list/transport-list.html" %}
+      {%- set transport = myprofile.transport -%}
+      {% include "blocks/transport-list/transport-list.html" %}
     </section>
 
     <section class="schedules">
@@ -44,26 +44,28 @@
       <h2 class="new-schedule__heading">Добавить план:</h2>
       <section class="new-schedule__step step step-dates">
         <h3 class="step__heading">Шаг 1. Даты пребывания</h3>
-        <p class="step__description">
-          Укажите предпочтительное количество попутчиков, которых
-          вы хотели бы позвать в поездку и ее предполагаемую длительность.
-        </p>
-        <label for="schedule__companions" class="schedule__companions-label">ищу попутчиков:</label>
-        <input type="number" id="schedule__companions" class="schedule__companions" value=2>
+        <form action="https://echo.htmlacademy.ru">
+          <p class="step__description">
+            Укажите предпочтительное количество попутчиков, которых
+            вы хотели бы позвать в поездку и ее предполагаемую длительность.
+          </p>
+          <label for="schedule__companions" class="schedule__companions-label">ищу попутчиков:</label>
+          <input type="number" id="schedule__companions" class="schedule__companions" value=2>
 
-        <label for="schedule__duration" class="schedule__duration-label">Длительность:</label>
-        <input type="number" id="schedule__duration" class="schedule__duration" value=2>
+          <label for="schedule__duration" class="schedule__duration-label">Длительность:</label>
+          <input type="number" id="schedule__duration" class="schedule__duration" value=2>
 
-        <input type="checkbox" id="schedule__children-ok" class="children-ok" checked>
-        <label for="schedule__children-ok" class="schedule__children-ok-label">Можно с детьми</label>
+          <input type="checkbox" id="schedule__children-ok" class="children-ok" checked>
+          <label for="schedule__children-ok" class="schedule__children-ok-label">Можно с детьми</label>
 
-        <label for="schedule__start-date">Дата начала путешествия:</label>
-        <input type="date" name="" id="schedule__start-date" class="schedule__start-date" value="2019-07-28">
-        <button type="submit" name="next-step" class="step__next">Следующий шаг</button>
+          <label for="schedule__start-date">Дата начала путешествия:</label>
+          <input type="date" name="" id="schedule__start-date" class="schedule__start-date" value="2019-07-28">
+          <button type="submit" name="next-step" class="step__next">Следующий шаг</button>
+        </form>
       </section>
       <section class="new-schedule__step step step-route">
         <h3 class="step__heading">Шаг 2. Маршрут</h3>
-        <form action="#">
+        <form action="https://echo.htmlacademy.ru">
           <p class="step__description">
             Укажите страны, которые вы хотели по посетить. Это может быть одна или сразу несколько.
           </p>
@@ -77,23 +79,25 @@
       </section>
       <section class="new-schedule__step step step-fun">
         <h3 class="step__heading">Шаг 3. Развлечения</h3>
-        <p class="step__description">
-          Наконец, расскажите о своих планах времяпровождения.
-          Можно писать в свободной форме и ставить тэги.
-        </p>
-        <ul class="step-fun__verbal-schedule verbal-schedule">
-          <li class="verbal-schedule__step verbal-step">
-            <h4 class="verbal-step__heading">Босния и герцеговина</h4>
-            <textarea name="verbal-step-1" id="" cols="30" rows="10" placeholder="План действий"></textarea>
-          </li>
-          <li class="verbal-schedule__step verbal-step">
-            <h4 class="verbal-step__heading">Чехословакия</h4>
-            <textarea name="verbal-step-2" id="" cols="30" rows="10"
-              placeholder="План действий">Пить пиво и лазить по старым замкам, наслаждаться аритектурой и вот это все.</textarea>
-          </li>
-        </ul>
-        <button type="submit" class="step__finish">Отправить</button>
-        <button type="submit" name="previous-step" class="step__previous">На шаг назад</button>
+        <form action="https://echo.htmlacademy.ru">
+          <p class="step__description">
+            Наконец, расскажите о своих планах времяпровождения.
+            Можно писать в свободной форме и ставить тэги.
+          </p>
+          <ul class="step-fun__verbal-schedule verbal-schedule">
+            <li class="verbal-schedule__step verbal-step">
+              <h4 class="verbal-step__heading">Босния и герцеговина</h4>
+              <textarea name="verbal-step-1" id="" cols="30" rows="10" placeholder="План действий"></textarea>
+            </li>
+            <li class="verbal-schedule__step verbal-step">
+              <h4 class="verbal-step__heading">Чехословакия</h4>
+              <textarea name="verbal-step-2" id="" cols="30" rows="10"
+                placeholder="План действий">Пить пиво и лазить по старым замкам, наслаждаться аритектурой и вот это все.</textarea>
+            </li>
+          </ul>
+          <button type="submit" class="step__finish">Отправить</button>
+          <button type="submit" name="previous-step" class="step__previous">На шаг назад</button>
+        </form>
       </section>
     </section>
 

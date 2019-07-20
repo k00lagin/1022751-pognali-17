@@ -11,6 +11,12 @@ var server = require("browser-sync").create();
 var data = require('gulp-data');
 var fs = require('fs');
 
+gulp.task("img", function () {
+  return gulp.src("source/img/**/*")
+    .pipe(gulp.dest("build/img"))
+    .pipe(server.stream());
+});
+
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
@@ -42,9 +48,10 @@ gulp.task("server", function () {
     ui: false
   });
 
+  gulp.watch("source/img/**/*", gulp.series("img"));
   gulp.watch("source/less/**/*.less", gulp.series("css"));
   gulp.watch("source/**/*.html", gulp.series("html"));
   gulp.watch("build/*.html").on("change", server.reload);
 });
 
-gulp.task("start", gulp.series("html", "css", "server"));
+gulp.task("start", gulp.series("img", "html", "css", "server"));

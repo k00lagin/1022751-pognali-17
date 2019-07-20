@@ -1,12 +1,12 @@
 <li class="companions-list__item companion{% if featured %} companion--featured{% endif %}">
   {{ level("companion", companion.level, 30, 3) }}
   <img src="img/{{companion.avatar}}-mobile@1x.jpg" alt="Аватарка" class="companion__photo">
-  {% set directions = companion.directions %}
+  {%- set directions = companion.directions -%}
   {% include "blocks/companion-directions/companion-directions.html" %}
   <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
-  {% set transport = companion.transport %}
+  {%- set transport = companion.transport -%}
   {% include "blocks/transport-list/transport-list.html" %}
-  {% set tags = companion.tags %}
+  {%- set tags = companion.tags -%}
   {% include "blocks/tags/tags.html" %}
   {% if companion.invitable %}
   <a href="#" class="button companion__invitable">Позвать!</a>

@@ -1,6 +1,6 @@
-﻿{% set isInnerPage = true %}
-{% from "blocks/logo/logo.html" import logo %}
-{% from "blocks/level/level.html" import level %}
+{%- set isInnerPage = true -%}
+{%- from "blocks/logo/logo.html" import logo -%}
+{%- from "blocks/level/level.html" import level -%}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  {% set title = "Попутчики" %}
+  {%- set title = "Попутчики" -%}
   {% include "blocks/page-header/page-header.html" %}
 
   <main class="page-main">

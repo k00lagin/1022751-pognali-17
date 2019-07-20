@@ -10,12 +10,12 @@
 -->#}
 {% macro level(parent, value, desiredR = 30, desiredStrokeWidth = 3) %}
 
-{% set width = desiredR *2 %}
-{% set height = desiredR *2 %}
-{% set innerRadius = 15.915494309189533 %}
-{% set strokeWidth = innerRadius * desiredStrokeWidth / desiredR %}
-{% set outerRadius = 15.915494309189533 + strokeWidth / 2 %}
-{% set scale = desiredR / outerRadius %}
+{%- set width = desiredR *2 -%}
+{%- set height = desiredR *2 -%}
+{%- set innerRadius = 15.915494309189533 -%}
+{%- set strokeWidth = innerRadius * desiredStrokeWidth / desiredR -%}
+{%- set outerRadius = 15.915494309189533 + strokeWidth / 2 -%}
+{%- set scale = desiredR / outerRadius -%}
 
 <div class="{{parent}}__level-wrap level">
   <span class="level__value">{{ value }}</span>

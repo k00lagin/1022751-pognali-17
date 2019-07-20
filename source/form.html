@@ -1,7 +1,7 @@
-{% set isInnerPage = true %}
-{% from "blocks/select-direction/select-direction.html" import selectDirection %}
-{% from "blocks/logo/logo.html" import logo %}
-{% from "blocks/level/level.html" import level %}
+{%- set isInnerPage = true -%}
+{%- from "blocks/select-direction/select-direction.html" import selectDirection -%}
+{%- from "blocks/logo/logo.html" import logo -%}
+{%- from "blocks/level/level.html" import level -%}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  {% set title = "Направления" %}
+  {%- set title = "Направления" -%}
   {% include "blocks/page-header/page-header.html" %}
   <main class="page-main">
 
@@ -24,10 +24,10 @@
 
       <a href="#" class="my-profile__change-avatar button">Сменить фото</a>
 
-    {% set tags = myprofile.tags %}
+    {%- set tags = myprofile.tags -%}
     {% include "blocks/tags/tags.html" %}
 
-    {% set transport = myprofile.transport %}
+    {%- set transport = myprofile.transport -%}
     {% include "blocks/transport-list/transport-list.html" %}
     </section>
 

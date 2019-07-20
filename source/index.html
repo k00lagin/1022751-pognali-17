@@ -1,5 +1,5 @@
-{% from "blocks/logo/logo.html" import logo %}
-{% from "blocks/level/level.html" import level %}
+{%- from "blocks/logo/logo.html" import logo -%}
+{%- from "blocks/level/level.html" import level -%}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  {% set title = "Сайт поиска попутчиков «Погнали»" %}
+  {%- set title = "Сайт поиска попутчиков «Погнали»" -%}
   {% include "blocks/page-header/page-header.html" %}
   <main class="page-main">
     <section class="first-screen">
@@ -102,7 +102,7 @@
         Теперь можно легко найти единомышленников!
       </p>
       <ul class="companions__list companions-list">
-        {% set featured = true %}
+        {%- set featured = true -%}
         {% for companion in [companions[0], companions[1]] %}
         {% include "blocks/companion/companion.html" %}
         {% endfor %}

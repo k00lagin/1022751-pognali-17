@@ -11,6 +11,12 @@ var server = require("browser-sync").create();
 var data = require('gulp-data');
 var fs = require('fs');
 
+gulp.task("fonts", function () {
+  return gulp.src("source/fonts/*")
+    .pipe(gulp.dest("build/fonts"))
+    .pipe(server.stream());
+});
+
 gulp.task("img", function () {
   return gulp.src("source/img/**/*")
     .pipe(gulp.dest("build/img"))
@@ -54,4 +60,4 @@ gulp.task("server", function () {
   gulp.watch("build/*.html").on("change", server.reload);
 });
 
-gulp.task("start", gulp.series("img", "html", "css", "server"));
+gulp.task("start", gulp.series("fonts", "img", "html", "css", "server"));

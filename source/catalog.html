@@ -84,11 +84,11 @@
       </form>
     </section>
 
-    <section class="filtered-companions">
+    <ul class="filtered-companions">
       {% for companion in companions %}
       {% include "blocks/companion/companion.html" %}
       {% endfor %}
-    </section>
+    </ul>
 
     <div class="controls">
       <a href="#" class="controls__more">Показать еще</a>

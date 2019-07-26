@@ -41,7 +41,7 @@
       </ol>
 
       <section class="first-screen__about-service about-service">
-        <h2 class="about-service__heading">О сервисе</h2>
+        <h2 class="about-service__heading subheading">О сервисе</h2>
 
         <p class="about-service__description">
           Любое путешествие веселее
@@ -58,7 +58,7 @@
     </section>
 
     <section class="directions">
-      <h2 class="directions__heading">Направления</h2>
+      <h2 class="directions__heading subheading">Направления</h2>
 
       <p class="directions__disclaimer">
         Мы не продаем туры
@@ -69,29 +69,35 @@
 
       <ul class="directions__list direction-list">
         <li class="direction-list__item direction">
-          <img src="#" alt="Острова посреди моря" class="direction__cover">
-          <h3 class="direction__title">Тайланд</h3>
-          <span class="direction__slogan">Джугли зовут!</span>
-          <span class="direction__travellers">18321</span>
+          <img src="img/thailand-mobile@1x.jpg" alt="Острова посреди моря" class="direction__cover">
+          <div class="direction__text-wrap">
+            <h3 class="direction__title">Тайланд</h3>
+            <span class="direction__slogan">Джугли зовут!</span>
+            <span class="direction__travellers">18321</span>
+          </div>
         </li>
         <li class="direction-list__item direction">
-          <img src="#" alt="Острова посреди моря" class="direction__cover">
-          <h3 class="direction__title">Франция</h3>
-          <span class="direction__slogan">Трэ бьен, манифик!</span>
-          <span class="direction__travellers">12518</span>
+          <img src="img/france-mobile@1x.jpg" alt="Острова посреди моря" class="direction__cover">
+          <div class="direction__text-wrap">
+            <h3 class="direction__title">Франция</h3>
+            <span class="direction__slogan">Трэ бьен, манифик!</span>
+            <span class="direction__travellers">12518</span>
+          </div>
         </li>
         <li class="direction-list__item direction">
-          <img src="#" alt="Острова посреди моря" class="direction__cover">
-          <h3 class="direction__title">Чехия</h3>
-          <span class="direction__slogan">Закоулки старой Европы</span>
-          <span class="direction__travellers">5326</span>
+          <img src="img/czech-mobile@1x.jpg" alt="Острова посреди моря" class="direction__cover">
+          <div class="direction__text-wrap">
+            <h3 class="direction__title">Чехия</h3>
+            <span class="direction__slogan">Закоулки старой Европы</span>
+            <span class="direction__travellers">5326</span>
+          </div>
         </li>
       </ul>
       <a href="#" class="directions__show-all button">Показать все</a>
     </section>
 
     <section class="companions">
-      <h2 class="companoins__heading">Попутчики</h2>
+      <h2 class="companoins__heading subheading">Попутчики</h2>
 
       <p class="companions__description">
         Все мы индивидуальны и у каждого свой взгляд на идеальный отдых. Одному нужен пляж и коктейль, а другому маршрут
@@ -111,7 +117,7 @@
     </section>
 
     <section class="tariffs">
-      <h2 class="tariffs__heading">Добавтьте свой профиль</h2>
+      <h2 class="tariffs__heading subheading">Добавтьте свой профиль</h2>
       <table class="tariffs__table">
         <tr class="visually-hidden">
           <td>Номер</td>
@@ -135,7 +141,7 @@
         </tr>
       </table>
       <details>
-        <summary class="tariffs__show-business-tariffs button">Показать тарифы для бизнеса</summary>
+        <summary class="tariffs__show-business-tariffs button button--text">Показать тарифы для бизнеса</summary>
         <section class="business-tariffs">
           <h2 class="business-tariffs__heading">Бизнес-тарифы</h2>
           <table class="business-tariffs__table">
@@ -166,7 +172,7 @@
     </section>
 
     <section class="calls-to-action">
-      <h2 class="calls-to-action__heading">Заинтересовались?</h2>
+      <h2 class="calls-to-action__heading subheading">Заинтересовались?</h2>
 
       <p class="calls-to-action__call-to-register">
         Зарегистрируйтесь,
@@ -177,7 +183,7 @@
       </p>
 
       <form action="https://echo.htmlacademy.ru" aria-label="Форма регистрации">
-        <input type="text" class="calls-to-action__registration-email" aria-label="Электронная почта" name="email">
+        <input type="text" class="calls-to-action__registration-email" aria-label="Электронная почта" name="email" placeholder="E-mail">
         <button type="submit" class="calls-to-action__register">
           <span class="visually-hidden">Зарегистрироваться</span>
         </button>

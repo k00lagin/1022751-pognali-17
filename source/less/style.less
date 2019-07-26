@@ -1,1 +1,41 @@
 @import "normalize.less";
+
+@import "variables.less";
+
+@import "fonts.less";
+
+@import "prepend.less";
+
+// Blocks which contain both html realisation and styling
+// meet several times over the site, on several pages or in the lists and so
+// may vary from place to place
+@import "../blocks/page-header/page-header.less";
+@import "../blocks/tariffs/tariffs.less";
+@import "../blocks/page-footer/page-footer.less";
+@import "../blocks/schedule/schedule.less";
+@import "../blocks/companion/companion.less";
+
+
+// Style-only components
+// meet once (or have primitive structure, like buttons) and realisation is inlined in html
+@import "components/subheading/subheading.less";
+@import "components/subheading/subheading.less";
+@import "components/button/button.less";
+
+@import "components/about-service/about-service.less";
+@import "components/calls-to-action/calls-to-action.less";
+@import "components/directions/directions.less";
+@import "components/direction/direction.less";
+@import "components/first-screen/first-screen.less";
+@import "components/steps/steps.less";
+@import "components/locate-us/locate-us.less";
+
+@import "components/schedules/schedules.less";
+@import "components/new-schedule/new-schedule.less";
+@import "components/step/step.less";
+
+@import "components/filter-companions/filter-companions.less";
+@import "components/companions-list/companions-list.less";
+@import "components/companions/companions.less";
+@import "components/filtered-companions/filtered-companions.less";
+@import "components/visit-wishes/visit-wishes.less";

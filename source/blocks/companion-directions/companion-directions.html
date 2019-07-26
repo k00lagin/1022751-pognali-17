@@ -1,8 +1,8 @@
 <section class="companion__directions companion-directions">
   <h4>Хочет посетить</h4>
-  <ul class="companion-directions__list directions" aria-label="Хочет отправиться в страны:">
+  <ul class="companion-directions__list visit-wishes" aria-label="Хочет отправиться в страны:">
     {% for direction in directions %}
-    <li class="directions__item directions__item--{{direction}}">
+    <li class="visit-wishes__item visit-wishes__item--{{direction}}">
       <span class="visually-hidden">{{direction}}</span>
     </li>
     {% endfor %}

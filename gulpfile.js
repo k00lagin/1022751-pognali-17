@@ -17,6 +17,12 @@ gulp.task("fonts", function () {
     .pipe(server.stream());
 });
 
+gulp.task("js", function () {
+  return gulp.src("source/js/*")
+    .pipe(gulp.dest("build/js"))
+    .pipe(server.stream());
+});
+
 gulp.task("img", function () {
   return gulp.src("source/img/**/*")
     .pipe(gulp.dest("build/img"))
@@ -54,6 +60,7 @@ gulp.task("server", function () {
     ui: false
   });
 
+  gulp.watch("source/js/*", gulp.series("img"));
   gulp.watch("source/img/**/*", gulp.series("img"));
   gulp.watch("source/blocks/**/*.less", gulp.series("css"));
   gulp.watch("source/less/**/*.less", gulp.series("css"));
@@ -61,4 +68,4 @@ gulp.task("server", function () {
   gulp.watch("build/*.html").on("change", server.reload);
 });
 
-gulp.task("start", gulp.series("fonts", "img", "html", "css", "server"));
+gulp.task("start", gulp.series("fonts", "js", "img", "html", "css", "server"));

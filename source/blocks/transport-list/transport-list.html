@@ -1,4 +1,5 @@
-<ul class="companion__transport-list transport-list">
+{% macro transport(parent, transport, editable = false) %}
+<ul class="{{parent}}__transport-list transport-list">
   {% if transport.plane %}
   <li class="transport-list__item transport-list__item--plane transport-list__item--active">
     <span class="visually-hidden">Хочет путешествовать самолётом</span>
@@ -39,3 +40,4 @@
   </li>
   {% endif %}
 </ul>
+{% endmacro %}

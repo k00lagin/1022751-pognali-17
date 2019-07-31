@@ -8,10 +8,8 @@
   {%- set directions = companion.directions -%}
   {% include "blocks/companion-directions/companion-directions.html" %}
   <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
-  {%- set transport = companion.transport -%}
-  {% include "blocks/transport-list/transport-list.html" %}
-  {%- set tags = companion.tags -%}
-  {% include "blocks/tags/tags.html" %}
+  {{ transport("companion", companion.transport) }}
+  {{ tags("companion", companion.tags) }}
   {% if companion.invitable %}
   <a href="#" class="companion__invitable button">Позвать!</a>
   {% endif %}

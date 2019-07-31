@@ -1,5 +1,13 @@
-<ul class="companion__tags tags">
+{%- macro tags(parent, tags, editable = false) -%}
+{%- if editable -%}
+<textarea class="{{parent}}__tags tags tags--editable">
+  {%- for tag in tags -%}#{{tag}} {% endfor -%}
+</textarea>
+{%- else -%}
+<ul class="{{parent}}__tags tags">
   {% for tag in tags %}
   <li class="tags__item"><a href="{{tag}}" class="tags__link">{{tag}}</a></li>
   {% endfor %}
 </ul>
+{%- endif -%}
+{%- endmacro -%}

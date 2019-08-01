@@ -5,17 +5,22 @@
 .steps__item {
   color: @dark-blue-grey;
   padding: 20px 25px;
-  border-radius: 10px;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
+
+  @media @from-tablet {
+    width: 50%;
+  }
+  @media @from-desktop {
+    width: 25%;
+  }
 
   &::before {
     counter-increment: steps;
     content: counter(steps);
     color: @white;
   }
-
   &:nth-child(4n + 1) {
     background-color: @mango-two;
   }
@@ -30,5 +35,32 @@
 
   &:nth-child(4n + 4) {
     background-color: @light-gold;
+  }
+
+  &:first-child {
+    border-top-left-radius: 10px;
+    @media @only-mobile {
+      border-top-right-radius: 10px;
+    }
+    @media @from-desktop {
+      border-bottom-left-radius: 10px;
+    }
+  }
+  &:last-child {
+    border-bottom-right-radius: 10px;
+    @media @only-mobile {
+      border-bottom-left-radius: 10px;
+    }
+    @media @from-desktop {
+      border-top-right-radius: 10px;
+    }
+  }
+  @media @only-tablet {
+    &:nth-child(2) {
+      border-top-right-radius: 10px;
+    }
+    &:nth-last-child(2) {
+      border-bottom-left-radius: 10px;
+    }
   }
 }

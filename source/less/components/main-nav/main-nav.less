@@ -1,10 +1,21 @@
-.main-nav__wrapper {
-  position: absolute;
+.main-nav__wrapper {  
   left: 0;
   right: 0;
   top: 0;
-  background-color: #fff;
   padding: 25px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+
+  @media @to-desktop {
+    position: absolute;
+    background-color: #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  @media @from-desktop {
+    display: flex;
+  }
+}
+
+.main-nav__list {
+  list-style: none;
+  display: flex;
 }

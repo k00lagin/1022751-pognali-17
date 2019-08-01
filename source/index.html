@@ -2,6 +2,7 @@
 {%- from "blocks/level/level.html" import level -%}
 {%- from "blocks/transport-list/transport-list.html" import transport -%}
 {%- from "blocks/tags/tags.html" import tags -%}
+{%- from "blocks/places/places.html" import places -%}
 {%- from "blocks/inline-svg/inline-svg.html" import inlineSvg -%}
 <!DOCTYPE html>
 <html lang="ru">
@@ -114,7 +115,7 @@
       <ul class="companions__list companions-list">
         {%- set featured = true -%}
         {% for companion in [companions[0], companions[1]] %}
-        {% include "blocks/companion/companion.html" %}
+        {% include "blocks/featured-companion/featured-companion.html" %}
         {% endfor %}
       </ul>
       <a href="#" class="companions__show-all button">Показать всех</a>

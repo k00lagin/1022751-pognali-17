@@ -1,5 +1,4 @@
 <li class="companions-list__item companion{% if featured %} companion--featured{% endif %}">
-  {{ level("companion", companion.level, 30, 3) }}
   {% if featured %}
     <img src="img/{{companion.avatar}}-desktop@1x.jpg" alt="Аватарка" class="companion__photo">
   {% else %}
@@ -10,6 +9,7 @@
   <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
   {{ transport("companion", companion.transport) }}
   {{ tags("companion", companion.tags) }}
+  {{ level("companion", companion.level, 30, 3) }}
   {% if companion.invitable %}
   <a href="#" class="companion__invitable button">Позвать!</a>
   {% endif %}

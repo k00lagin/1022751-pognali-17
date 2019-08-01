@@ -1,0 +1,38 @@
+.main-menu__toggle-wrapper {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  display: flex;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+
+.main-menu[open] .main-menu__open {
+  display: none;
+}
+
+.main-menu:not([open]) .main-menu__close {
+  display: none;
+}
+
+.main-menu__open {
+  width: 25px;
+  height: 25px;
+  fill: @white;
+}
+
+.main-menu__close {
+  width: 19px;
+  height: 19px;
+  fill: @dark;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}

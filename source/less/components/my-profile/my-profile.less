@@ -1,0 +1,31 @@
+.my-profile {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 25px;
+}
+
+.my-profile__tags {
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid @ghost;
+  list-style: none;
+  margin: 0 0 25px;
+  width: 100%;
+}
+
+.my-profile__transport-list {
+  order: 1;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  border: 1px solid @ghost;
+  list-style: none;
+  min-height: 60px;
+}
+
+@media @only-tablet {
+  .my-profile__level-wrap + .my-profile__transport-list {
+    order: unset;
+  }
+}

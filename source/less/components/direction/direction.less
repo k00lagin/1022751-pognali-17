@@ -1,16 +1,48 @@
 .direction {
+  width: 100%;
+  border-radius: 10px;
+  color: @greyish-brown-3;
 
+  @media @from-tablet {
+    display: flex;
+    background-color: @white;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-radius: 20px;
+  }
+  @media @from-desktop {
+    width: 560px;
+  }
 }
 
 .direction__cover {
-  border-radius: 10px;
+  width: 100%;
+  display: block;
+
+  @media @only-mobile {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+
+  @media @from-tablet {
+    width: 186px;
+    height: 140px;
+    order: 1;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
 }
 
 .direction__text-wrap {
-  color: @greyish-brown-3;
-  background-color: @white;
-  border-radius: 10px;
   padding: 25px;
+
+  @media @only-mobile {
+    background-color: @white;
+    border-radius: 10px;
+  }
+  @media @from-tablet {
+    padding: 30px;
+  }
 }
 
 .direction__title {

@@ -1,5 +1,13 @@
 .steps {
   counter-reset: steps;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  @media @from-tablet {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 .steps__item {
@@ -9,6 +17,7 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
+  box-sizing: border-box;
 
   &::before {
     counter-increment: steps;
@@ -30,5 +39,12 @@
 
   &:nth-child(4n + 4) {
     background-color: @light-gold;
+  }
+
+  @media @from-tablet {
+    width: 50%;
+  }
+  @media @from-desktop {
+    width: 25%;
   }
 }

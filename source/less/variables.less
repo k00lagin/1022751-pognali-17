@@ -38,3 +38,14 @@
 @very-dark-brown: #010000;
 @black: #000000;
 @black-3: rgba(0, 0, 0, 0.3);
+
+@mobile-width: 320px;
+@mobile-max-width: 767px;
+@tablet-width: 768px;
+@tablet-max-width: 1439px;
+@desktop-width: 1440px;
+
+@only-mobile: ~"screen and (max-width: @{mobile-max-width})";
+@only-tablet: ~"screen and (min-width: @{tablet-width}) and (max-width: @{tablet-max-width})";
+@from-tablet: ~"screen and (min-width: @{tablet-width})";
+@from-desktop: ~"screen and (min-width: @{desktop-width})";

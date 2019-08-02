@@ -1,0 +1,25 @@
+.site-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav__item {
+  display: block;
+  @media @only-mobile {
+    text-align: center;
+  }
+}
+
+.site-nav__link {
+  @media @to-desktop {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: @dark-blue-grey;
+    text-decoration: none;
+  }
+
+  @media @only-tablet {
+    font-size: 60px;
+  }
+}

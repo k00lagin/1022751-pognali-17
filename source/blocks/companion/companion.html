@@ -1,16 +1,9 @@
 <li class="companions-list__item companion{% if featured %} companion--featured{% endif %}">
-  {{ level("companion", companion.level, 30, 3) }}
-  {% if featured %}
-    <img src="img/{{companion.avatar}}-desktop@1x.jpg" alt="Аватарка" class="companion__photo">
-  {% else %}
-    <img src="img/{{companion.avatar}}-mobile@1x.jpg" alt="Аватарка" class="companion__photo">
-  {% endif %}
-  {%- set directions = companion.directions -%}
-  {% include "blocks/companion-directions/companion-directions.html" %}
+  <img src="img/{{companion.avatar}}-mobile@1x.jpg" alt="Аватарка" class="companion__photo">
+  {{ places("featured-companion", companion.directions) }}
   <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
   {{ transport("companion", companion.transport) }}
   {{ tags("companion", companion.tags) }}
-  {% if companion.invitable %}
+  {{ level("companion", companion.level, 30, 3) }}
   <a href="#" class="companion__invitable button">Позвать!</a>
-  {% endif %}
 </li>

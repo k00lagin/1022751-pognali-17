@@ -1,4 +1,4 @@
-.main-nav__wrapper {  
+.main-nav__wrapper {
   left: 0;
   right: 0;
   top: 0;
@@ -6,10 +6,11 @@
 
   @media @to-desktop {
     position: absolute;
-    background-color: #fff;
+    background-color: @white;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+
   @media @from-desktop {
     display: flex;
   }
@@ -17,6 +18,7 @@
 
 .main-nav__social-list {
   justify-content: center;
+
   @media @from-tablet {
     justify-content: flex-start;
   }

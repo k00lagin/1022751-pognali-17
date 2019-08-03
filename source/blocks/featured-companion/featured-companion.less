@@ -39,6 +39,7 @@
   text-align: center;
   position: relative;
 }
+
 .companion__name--offline::before,
 .companion__name--online::before {
   content: "";
@@ -51,9 +52,11 @@
   top: 50%;
   transform: translateY(-4px);
 }
+
 .featured-companion__name--offline::before {
   background-color: @salmon;
 }
+
 .featured-companion__name--online::before {
   background-color: @green-apple;
 }
@@ -75,6 +78,7 @@
   line-height: 1.2;
   color: @greyish-brown;
   text-decoration: none;
+
   &::before {
     content: "#";
   }

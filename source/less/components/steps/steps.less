@@ -1,5 +1,13 @@
 .steps {
   counter-reset: steps;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  @media @from-tablet {
+    display: flex;
+    flex-flow: row wrap;
+  }
 }
 
 .steps__item {
@@ -8,12 +16,45 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
+  box-sizing: border-box;
 
-  @media @from-tablet {
-    width: 50%;
+  @media @only-mobile {
+    border-radius: 10px;
+    min-height: 100px;
+    &:last-child {
+      min-height: 80px;
+    }
+    &:not(:first-child) {
+      margin-top: -20px;
+    }
+  }
+
+  @media @only-tablet {
+    min-height: 140px;
+    width: calc(50% + 40px);
+    &:nth-child(2n) {
+      width: 50%;
+      margin-left: -40px;
+    }
+    &:nth-child(-n + 2) {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    &:nth-last-child(-n + 2) {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
   }
   @media @from-desktop {
-    width: 25%;
+    width: calc(25% + 40px);
+    min-height: 107px;
+    border-radius: 20px;
+    &:last-child {
+      width: 25%;
+    }
+    &:not(:first-child) {
+      margin-left: -40px;
+    }
   }
 
   &::before {
@@ -35,32 +76,5 @@
 
   &:nth-child(4n + 4) {
     background-color: @light-gold;
-  }
-
-  &:first-child {
-    border-top-left-radius: 10px;
-    @media @only-mobile {
-      border-top-right-radius: 10px;
-    }
-    @media @from-desktop {
-      border-bottom-left-radius: 10px;
-    }
-  }
-  &:last-child {
-    border-bottom-right-radius: 10px;
-    @media @only-mobile {
-      border-bottom-left-radius: 10px;
-    }
-    @media @from-desktop {
-      border-top-right-radius: 10px;
-    }
-  }
-  @media @only-tablet {
-    &:nth-child(2) {
-      border-top-right-radius: 10px;
-    }
-    &:nth-last-child(2) {
-      border-bottom-left-radius: 10px;
-    }
   }
 }

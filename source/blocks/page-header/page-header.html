@@ -1,58 +1,87 @@
 <header class="page-header">
-  {{ logo("page-header", "100", "19", isInnerPage) }}
-  <nav class="main-nav">
-    <details class="main-menu">
-      <summary class="main-menu__toggle-wrapper" aria-role="button" aria-haspopup="menu">
-        <span role="img" class="main-menu__trigger main-menu__trigger--open" aria-label="Открыть меню"></span>
-        <span role="img" class="main-menu__trigger main-menu__trigger--close" aria-label="Закрыть меню"></span>
-      </summary>
-      <div class="main-nav__wrapper">
-        {{ logo("page-header", "96", "15", isInnerPage) }}
-        <ul class="main-nav__list site-nav">
-          <li class="site-nav__item site-nav__item--active">
-            <a {% if isInnerPage %}href="index.html" {% endif %} class="site-nav__link">О Сервисе</a>
-          </li>
-          <li class="site-nav__item">
-            <a href="form.html" class="site-nav__link">Направления</a>
-          </li>
-          <li class="site-nav__item">
-            <a href="catalog.html" class="site-nav__link">Попутчики</a>
-          </li>
-        </ul>
-        <ul class="main-nav__list user-nav">
-          <li class="user-nav__item">
-            <a class="user-nav__login button" href="login.html">Авторизация</a>
-          </li>
-        </ul>
-        <ul class="main-nav__list reach-list">
-          <li class="reach-list__item">
-            <a class="reach-list__link reach-list__link--phone reach-list--inverse" href="tel:+78005558628">8 800
-              555-86-28</a>
-          </li>
-          <li class="reach-list__item">
-            <a class="reach-list__link reach-list__link--mail reach-list--inverse"
-              href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
-          </li>
-        </ul>
-        <ul class="main-nav__social-list social-list">
-          <li class="social-list__item">
-            <a class="social-list__link social-list__link--facebook social-list__link--alternate"
-              href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Мы в
-                Фейсбуке</span></a>
-          </li>
-          <li class="social-list__item">
-            <a class="social-list__link social-list__link--vkontakte social-list__link--alternate"
-              href="https://vk.com/htmlacademy"><span class="visually-hidden">Мы во
-                Вконтакте</span></a>
-          </li>
-          <li class="social-list__item">
-            <a class="social-list__link social-list__link--instagram social-list__link--alternate"
-              href="https://www.instagram.com/htmlacademy"><span class="visually-hidden">Мы в
-                Инстаграме</span></a>
-          </li>
-        </ul>
-      </div>
-    </details>
+  <!-- aria-pressed="false" -->
+  <input type="checkbox" name="menu-backend" id="menu-backend" role="button"
+    class="page-header__menu-backend visually-hidden" aria-labelledby="menu-label" aria-haspopup="true">
+  <label for="menu-backend" id="menu-label" class="page-header__menu-frontend">
+    <span class="page-header__open-trigger" aria-label="Открыть меню"></span>
+    <span class="page-header__close-trigger" aria-label="Закрыть меню"></span>
+  </label>
+  <div class="page-header__logo-wrap">
+    {{ logo("page-header", "100", "19", isInnerPage) }}
+  </div>
+  <nav class="page-header__site-nav main-nav">
+    <ul class="main-nav__list site-nav">
+      <li class="site-nav__item site-nav__item--active">
+        <a {% if isInnerPage %}href="index.html" {% endif %} class="site-nav__link">О Сервисе</a>
+      </li>
+      <li class="site-nav__item">
+        <a href="form.html" class="site-nav__link">Направления</a>
+      </li>
+      <li class="site-nav__item">
+        <a href="catalog.html" class="site-nav__link">Попутчики</a>
+      </li>
+    </ul>
   </nav>
+  <ul class="page-header__contacts contacts contacts--in-header">
+    <li class="contacts__item">
+      <a class="contacts__link contacts__link--phone contacts__link--inverse" href="tel:+78005558628" aria-label="8 800
+        555-86-28"><span class="page-header__contact-text">8 800 555-86-28</span></a>
+    </li>
+    <li class="contacts__item">
+      <a class="contacts__link contacts__link--mail contacts__link--inverse" href="mailto:mail@htmlacademy.ru"
+        aria-label="mail@htmlacademy.ru"><span class="page-header__contact-text">mail@htmlacademy.ru</span></a>
+    </li>
+  </ul>
+  <div class="page-header__login-wrap">
+    <a class="user-nav__login button" href="login.html">Авторизация</a>
+  </div>
+  <ul class="page-header__social-list social-list social-list--top">
+    <li class="social-list__item">
+      <a class="social-list__link social-list__link--facebook social-list__link--alternate"
+        href="https://www.facebook.com/htmlacademy"><span class="visually-hidden">Мы в
+          Фейсбуке</span></a>
+    </li>
+    <li class="social-list__item">
+      <a class="social-list__link social-list__link--vkontakte social-list__link--alternate"
+        href="https://vk.com/htmlacademy"><span class="visually-hidden">Мы во
+          Вконтакте</span></a>
+    </li>
+    <li class="social-list__item">
+      <a class="social-list__link social-list__link--instagram social-list__link--alternate"
+        href="https://www.instagram.com/htmlacademy"><span class="visually-hidden">Мы в
+          Инстаграме</span></a>
+    </li>
+  </ul>
+  {%- if not isInnerPage -%}
+  <b class="page-header__slogan">В путешествие с крутыми попутчиками!</b>
+
+  <blockquote class="page-header__review review">
+    <p class="review__text">«Лучшее приложение, что я видел в жизни!»</p>
+    <cite class="review__author">Мурат&nbsp;Эльтазин главный редактор газеты «гаджетлайф»</cite>
+  </blockquote>
+
+  <ul class="page-header__steps steps">
+    <li class="steps__item">Выберите направление</li>
+    <li class="steps__item">Изучите идеи путешественников</li>
+    <li class="steps__item">Находите тех, кто похож на вас</li>
+    <li class="steps__item">Путешествуйте вместе!</li>
+  </ul>
+
+  <section class="page-header__about-service about-service">
+    <h2 class="about-service__heading subheading">О сервисе</h2>
+
+    <p class="about-service__description">
+      Любое путешествие веселее
+      с попутчиками, которые на одной волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в
+      чужих.
+    </p>
+
+    <p class="about-service__action">
+      А если найдете кого-то
+      близкого по духу — скорее
+      зовите в совместный трип!
+    </p>
+  </section>
+  {%- endif -%}
   <h1 class="page-header__heading visually-hidden">{{ title }}</h1>
 </header>

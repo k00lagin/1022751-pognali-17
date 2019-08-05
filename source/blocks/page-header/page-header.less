@@ -5,6 +5,168 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
+}
+
+.page-header__logo-wrap {
+  order: -2;
+  z-index: 1;
+}
+
+.page-header__slogan {
+  width: 100%;
+}
+
+.page-header__menu-frontend {
+  order: -1;
+  z-index: 1;
+}
+
+@media @only-mobile {
+  .page-header__logo-wrap {
+    width: calc(100% - 25px);
+  }
+
+  .page-header__menu-backend:checked ~ .page-header__login-wrap {
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    margin-right: -25px;
+    padding: 0 25px;
+    background-color: @white;
+  }
+
+  .page-header__menu-backend:not(:checked) {
+    & ~ .page-header__contacts {
+      order: 1;
+      display: flex;
+    }
+
+    & ~ .page-header__login-wrap {
+      order: 2;
+    }
+  }
+
+  .page-header__review,
+  .page-header__steps,
+  .page-header__about-service {
+    order: 2;
+  }
+}
+
+@media @only-tablet {
+  .page-header__menu-backend:not(:checked) ~ .page-header__contacts {
+    display: none;
+  }
+
+  .page-header__logo-wrap {
+    width: calc(50% - 12.5px);
+  }
+
+  .page-header__login-wrap {
+    width: calc(50% - 12.5px);
+    order: -1;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.page-header__contact-text {
+  display: none;
+}
+
+.page-header__social-list {
+  display: none;
+}
+
+@media @to-desktop {
+  .page-header__menu-backend:focus + .page-header__menu-frontend {
+    outline: 1px solid lightblue; // TODO: check styleguide
+  }
+
+  .page-header__close-trigger,
+  .page-header__open-trigger {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .page-header__open-trigger {
+    background-image: url("../img/sprite.svg#menu-white");
+    background-size: 25px;
+  }
+
+  .page-header__close-trigger {
+    background-size: 19px;
+    background-image: url("../img/sprite.svg#menu-close-silver");
+  }
+
+  .page-header__menu-backend:not(:checked) + .page-header__menu-frontend > .page-header__close-trigger,
+  .page-header__menu-backend:checked + .page-header__menu-frontend > .page-header__open-trigger {
+    display: none;
+  }
+
+  .page-header__site-nav {
+    display: none;
+    background-color: @white;
+    width: calc(100% + 50px);
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-top: -50px;
+    padding-top: 50px;
+  }
+
+  .page-header__menu-backend:checked {
+    & ~ .page-header__site-nav {
+      display: block;
+    }
+
+    & ~ .page-header__contacts {
+      width: calc(100% + 50px);
+      margin: 0 -25px;
+      padding: 0 25px;
+      background-color: @white;
+    }
+
+    & ~ .page-header__contacts .contacts__link.contacts__link--phone::before {
+      background-color: @dark-blue-grey-three;
+      background-image: url("../img/sprite.svg#phone-light-gold");
+    }
+
+    & ~ .page-header__contacts .contacts__link.contacts__link--mail::before {
+      background-color: @dark-blue-grey-three;
+      background-image: url("../img/sprite.svg#mail-light-gold");
+    }
+
+    & ~ .page-header__contacts .page-header__contact-text {
+      display: inline;
+    }
+
+    & ~ .page-header__social-list {
+      display: flex;
+      width: calc(100% + 50px);
+      margin: 0 -25px;
+      padding: 0 25px;
+      background-color: @white;
+    }
+  }
+}
+
+@media @from-desktop {
+  .page-header__menu-backend {
+    display: none;
+  }
+
+  .page-header__contacts {
+    display: flex;
+  }
+
+  .page-header__login-wrap a {
+    height: 50px;
+    border-radius: 25px;
+  }
 }

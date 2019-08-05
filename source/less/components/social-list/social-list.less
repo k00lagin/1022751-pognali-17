@@ -1,9 +1,20 @@
 .social-list {
-  display: flex;
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.social-list--top {
+  justify-content: center;
+
+  @media @from-tablet {
+    justify-content: flex-start;
+  }
+
+  @media @from-desktop {
+    display: none;
+  }
 }
 
 .social-list__link--facebook {

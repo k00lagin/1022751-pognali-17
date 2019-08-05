@@ -1,0 +1,64 @@
+.contacts {
+  padding: 0;
+  list-style: none;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+  color: @light-gold;
+  text-decoration: none;
+}
+
+.contacts__link--inverse {
+  color: @dark-blue-grey;
+}
+
+.contacts__link::before {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: @dark-blue-grey-three;
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+
+  @media @from-tablet {
+    width: 67px;
+    height: 67px;
+    background-size: 27px;
+    margin-right: 25px;
+  }
+}
+
+.contacts__link--phone::before {
+  background-image: url("../img/sprite.svg#phone-light-gold");
+}
+
+.contacts__link--mail::before {
+  background-image: url("../img/sprite.svg#mail-light-gold");
+}
+
+.contacts__link--phone.contacts__link--inverse::before {
+  background-color: @mango-two;
+  background-image: url("../img/sprite.svg#topmenu-phone-dark");
+}
+
+.contacts__link--mail.contacts__link--inverse::before {
+  background-color: @mango-three;
+  background-image: url("../img/sprite.svg#topmenu-mail-dark");
+}
+
+@media @from-desktop {
+  .contacts__link--inverse::before {
+    width: 50px;
+    height: 50px;
+    background-size: 18px;
+  }
+}

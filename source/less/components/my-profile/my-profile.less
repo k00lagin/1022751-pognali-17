@@ -15,17 +15,37 @@
 
 .my-profile__transport-list {
   order: 1;
-  width: 100%;
+  
   padding: 0;
   margin: 0;
   border-radius: 10px;
   border: 1px solid @ghost;
   list-style: none;
   min-height: 60px;
+  @media @only-mobile {
+    width: 100%;
+  }
+  @media @only-tablet {
+    flex-grow: 1;
+  }
 }
 
 @media @only-tablet {
   .my-profile__level-wrap + .my-profile__transport-list {
-    order: unset;
+    order: 0;
   }
+}
+
+.my-profile {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.my-profile__level-wrap,
+.my-profile__transport-list {
+  margin-right: 60px;
+}
+
+.my-profile__change-avatar {
+  width: 100%;
 }

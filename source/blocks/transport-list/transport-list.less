@@ -10,6 +10,8 @@
   width: 21px;
   height: 21px;
   opacity: 0.15;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .transport-list__item--active {
@@ -34,4 +36,37 @@
 .transport-list__item--foot {
   width: 20px;
   background-image: url("../img/sprite.svg#foot-dark-slate-blue");
+}
+
+.transport-list.transport-list--editable {
+  justify-content: center;
+  padding: 25px 0;
+}
+
+.transport-list--editable .transport-list__item {
+  width: 43px;
+  height: 43px;
+  opacity: 1;
+  background-color: @white;
+  border-radius: 50%;
+}
+
+.transport-list--editable .transport-list__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.transport-list--editable .transport-list__item--plane {
+  background-size: 19px 21px;
+}
+
+.transport-list--editable .transport-list__item--bus {
+  background-size: 17px 21px;
+}
+
+.transport-list--editable .transport-list__item--bike {
+  background-size: 24px 21px;
+}
+
+.transport-list--editable .transport-list__item--foot {
+  background-size: 20px 21px;
 }

@@ -1,9 +1,16 @@
+.level {
+  position: relative;
+}
+
+.level .level__value {
+  position: absolute;
+}
+
 .level--dark .level__value {
   font-size: 24px;
   font-weight: bold;
   line-height: 1;
   color: @white;
-  position: absolute;
   width: 25px;
   height: 19px;
   margin-top: 14px;
@@ -19,6 +26,37 @@
     left: -3px;
     width: 31px;
     border-top: 1px solid @white-3;
+    text-align: center;
+    padding-top: 3px;
+  }
+}
+
+.level--my .level__backdrop {
+  fill-opacity: 0;
+}
+
+.level--my .level__value {
+  font-size: 38px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  color: @dark;
+  width: 40px;
+  height: 30px;
+  top: 25px;
+  left: 30px;
+
+  &::after {
+    content: "level";
+    color: @greyish-brown;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.22;
+    position: absolute;
+    top: 40px;
+    left: -3px;
+    width: 49px;
+    border-top: 2px solid @ghost;
     text-align: center;
     padding-top: 3px;
   }

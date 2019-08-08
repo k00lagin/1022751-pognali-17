@@ -3,8 +3,78 @@
   background-color: @white;
   padding: 25px;
   border-radius: 25px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media @from-tablet {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
 }
 
 .schedule__heading {
-  margin: 0;
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  color: @dark-slate-blue;  
+
+  @media @from-tablet {
+    padding: 35px;
+    font-size: 24px;
+    line-height: 2.08;
+    border-bottom: 1px solid @black-3;
+    width: 100%;
+  }
+}
+
+.schedule__companions,
+.schedule__dates {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1.4px;
+  color: @dark-slate-blue;
+  text-transform: uppercase;
+
+  @media @from-tablet {
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+  }
+}
+
+.schedule__companions {
+  margin-bottom: 3px;
+
+  @media @from-tablet {
+    margin-left: 35px;
+  }
+}
+
+.schedule__dates {
+  margin-bottom: 20px;
+}
+
+.schedule__change-button {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: 1.4px;
+  text-decoration: none;
+  color: @black-3;
+  display: block;
+
+  @media @from-tablet {
+    margin-right: 35px;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 2px; 
+  }
 }

@@ -6,6 +6,7 @@
 {%- from "blocks/tags/tags.html" import tags -%}
 {%- from "blocks/places/places.html" import places -%}
 {%- from "blocks/inline-svg/inline-svg.html" import inlineSvg -%}
+{%- from "blocks/date-picker/date-picker.html" import datePicker -%}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -62,8 +63,7 @@
           <input type="checkbox" id="new-schedule__children-ok" class="children-ok" checked>
           <label for="new-schedule__children-ok" class="new-schedule__children-ok-label">Можно с детьми</label>
 
-          <label for="new-schedule__start-date">Дата начала путешествия:</label>
-          <input type="date" name="" id="new-schedule__start-date" class="new-schedule__start-date" value="2019-07-28">
+          {{ datePicker("new-schedule") }}
           <button type="submit" name="next-step" class="step__next button">Следующий шаг</button>
         </form>
       </section>

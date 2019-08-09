@@ -1,0 +1,38 @@
+{% macro datePicker(parent, month, currenbuttonate, pickedStart, pickedLength) %}
+<section class="{{parent}}__date-picker date-picker">
+  <header class="date-picker__header">
+    <th class="date-picker__weekday date-picker__weekday--monday" aria-label="Понедельник">Пн</th>
+    <th class="date-picker__weekday date-picker__weekday--tuesday" aria-label="Вторник">Вт</th>
+    <th class="date-picker__weekday date-picker__weekday--wednesday" aria-label="Среда">Ср</th>
+    <th class="date-picker__weekday date-picker__weekday--thursday" aria-label="Четверг">Чт</th>
+    <th class="date-picker__weekday date-picker__weekday--friday" aria-label="Пятница">Пт</th>
+    <th class="date-picker__weekday date-picker__weekday--saturday date-picker__weekday--weekend" aria-label="Суббота">
+      Сб</th>
+    <th class="date-picker__weekday date-picker__weekday--sunday date-picker__weekday--weekend"
+      aria-label="Воскресенье">Вс</th>
+  </header>
+  <div class="date-picker__body">
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>24</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>25</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>26</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>27</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>28</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>1</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>2</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>3</button>
+    <button type="submit" class="date-picker__day date-picker__day--past" disabled>4</button>
+    <button type="submit" class="date-picker__day date-picker__day--current">5</button>
+    <button type="submit" class="date-picker__day date-picker__day--picked date-picker__day--picked-first">6</button>
+    <button type="submit" class="date-picker__day date-picker__day--picked">7</button>
+    <button type="submit" class="date-picker__day date-picker__day--picked date-picker__day--picked-last">8</button>
+    <button type="submit" class="date-picker__day">9</button>
+    <button type="submit" class="date-picker__day">10</button>
+    <button type="submit" class="date-picker__day">11</button>
+    <button type="submit" class="date-picker__day">12</button>
+    <button type="submit" class="date-picker__day">13</button>
+    <button type="submit" class="date-picker__day">14</button>
+    <button type="submit" class="date-picker__day">15</button>
+    <button type="submit" class="date-picker__day">16</button>
+  </div>
+</section>
+{% endmacro %}

@@ -1,0 +1,77 @@
+.date-picker {
+  
+}
+.date-picker__body {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 210px;
+}
+
+.date-picker__weekday {
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: @greyish-brown;
+}
+
+.date-picker__weekday--weekend {
+  color: @vivid-orange;
+}
+
+.date-picker__day {
+  min-width: 30px;
+  width: 14.285%;
+  height: 30px;
+  box-sizing: border-box;
+  background-color: @pale-grey;
+  color: @greyish-brown;
+  text-align: center;
+  border: 1px solid @ghost;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.29;
+
+  &:not(:nth-child(7n)) {
+    margin-right: -1px;
+  }
+
+  &:not(:nth-last-child(-n + 7)) {
+    margin-bottom: -1px;
+  }
+
+  @media @from-tablet {
+    min-width: 70px;
+    min-height: 70px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: 2px;  
+  }
+
+  @media @from-desktop {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.67;
+    letter-spacing: 1.8px;
+    text-align: left;
+  }
+}
+
+.date-picker__day--past {
+  background-color: @white;
+  color: @greyish-brown-3;
+}
+
+.date-picker__day--picked {
+  background-color: @dark-slate-blue;
+  color: @white;
+}
+
+.date-picker__day--current {
+  border: 2px solid @vivid-orange;
+  z-index: 1;
+
+  @media @from-tablet {
+    border-width: 4px;
+  }
+}

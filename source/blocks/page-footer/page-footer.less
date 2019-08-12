@@ -9,7 +9,9 @@
   justify-content: space-between;
   align-items: center;
   flex-flow: column nowrap;
-  max-width: 1440px;
+  max-width: ~"@{desktop-width}px";
+  box-sizing: border-box;
+  margin: 0 auto;
 
   @media @from-tablet {
     min-height: 155px;

@@ -3,4 +3,48 @@
   background-color: @pale-grey;
   padding: 25px;
   border-radius: 20px;
+  counter-reset: service;
+}
+
+@media @only-mobile {
+  .tariffs__heading::after {
+    content: "";
+    display: block;
+    width: 99px;
+    height: 99px;
+    background-image: url("../img/sprite.svg#rates");
+  }
+}
+
+.tariffs__table {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 45px;
+  position: relative;
+
+  @media @from-tablet {
+    padding-left: 105px;
+    padding-right: 50px;
+  }
+
+  @media @from-desktop {
+    padding-left: 195px;
+    padding-right: 380px;
+  }
+}
+
+.tariffs__table::after {
+  content: "";
+  display: block;
+  width: 99px;
+  height: 99px;
+  background-image: url("../img/sprite.svg#rates");
+
+  @media @from-desktop {
+    width: 198px;
+    height: 198px;
+    position: absolute;
+    right: 130px;
+    top: 0;
+  }
 }

@@ -1,0 +1,80 @@
+.service {
+  display: flex;
+  flex-flow: column nowrap;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); // TODO: check
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.38;
+  color: @greyish-brown;
+
+  @media @from-tablet {
+    font-size: 28px;
+    line-height: 1.18;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    min-height: 66px;
+    align-items: center;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); // TODO: check
+  }
+
+  &::before {
+    counter-increment: service;
+    content: counter(service);
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+    line-height: 0.88;
+    color: @white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    @media @only-mobile {
+      right: -44px;
+    }
+
+    @media @from-tablet {
+      width: 67px;
+      height: 67px;
+      font-size: 28px;
+      line-height: 1;
+      left: -92px;
+      top: 0;
+    }
+  }
+
+  &:nth-child(3n + 2)::before {
+    background-color: @mango;
+  }
+
+  &:nth-child(3n + 3)::before {
+    background-color: @mango-three;
+  }
+
+  &:nth-child(3n + 4)::before {
+    background-color: @light-gold;
+  }
+
+  @media @from-tablet {
+    & .service__price::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 198px;
+      height: 153px;
+      background-color: @pale-grey-dark;
+      right: 0;
+      border-radius: 20px;
+    }
+  }
+}
+
+.service__price {
+  position: relative;
+}

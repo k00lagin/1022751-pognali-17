@@ -27,8 +27,11 @@
       {{ transport("transport-list--editable my-profile", myprofile.transport, true) }}
 
       <!-- adopt machine learning to provide more relevant image alts -->
-      <img src="img/{{myprofile.avatar}}-mobile@1x.jpg" alt="Аватарка" class="my-profile__avatar">
-
+      <picture class="my-profile__avatar">
+        <source media="(min-width: 768px)" srcset="img/photo-account-tablet@1x.jpg 1x, img/photo-account-tablet@2x.jpg 2x">
+        <source media="(min-width: 1440px)" srcset="img/demin-tablet@1x.jpg 1x, img/demin-tablet@2x.jpg 2x">
+        <img src="img/photo-account-mobile@1x.jpg" alt="Аватарка">
+      </picture>
       <a href="#" class="my-profile__change-avatar button">Сменить фото</a>
 
       {{ tags("my-profile", myprofile.tags, true) }}

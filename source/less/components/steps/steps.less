@@ -3,6 +3,8 @@
   padding: 0;
   list-style: none;
   margin: 0;
+  display: block;
+  width: 100%;
 
   @media @from-tablet {
     display: flex;
@@ -11,12 +13,21 @@
 }
 
 .steps__item {
-  color: @dark-blue-grey;
+  color: @dark;
   padding: 20px 25px;
   font-size: 18px;
   font-weight: bold;
   line-height: 1;
   box-sizing: border-box;
+  position: relative;
+
+  @media @from-tablet {
+    padding: 30px;
+    font-size: 24px;
+  }
+
+  @media @from-desktop {
+  }  
 
   @media @only-mobile {
     border-radius: 10px;
@@ -69,6 +80,34 @@
     counter-increment: steps;
     content: counter(steps);
     color: @white;
+    position: absolute;
+
+    @media @only-mobile {
+      top: 23px;
+      right: 23px;
+    }
+
+    @media @only-tablet {
+      left: 30px;
+      bottom: 30px;
+    }
+
+    @media @from-desktop {
+      top: 30px;
+      right: 75px;
+    }
+  }
+
+  &:nth-child(2n)::before {
+    @media @only-tablet {
+      left: 35px;
+    }
+  }
+
+  &:last-child::before {
+    @media @from-desktop {
+      right: 35px;
+    }
   }
 
   &:nth-child(4n + 1) {

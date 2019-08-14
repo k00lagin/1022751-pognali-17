@@ -20,8 +20,8 @@
 <div class="{{parent}}__level-wrap level">
   <span class="level__value">{{ value }}</span>
   <svg width="{{ width }}px" height="{{ height }}px" class="level__chart">
-    <circle class="level__backdrop" cx="{{outerRadius}}" cy="{{outerRadius}}" r="{{outerRadius}}" fill="#000000" fill-opacity="0.6"
-      transform="scale({{scale}})" transform-origin="left top"></circle>
+    <!-- <circle class="level__backdrop" cx="{{outerRadius}}" cy="{{outerRadius}}" r="{{outerRadius}}" fill="#000000" fill-opacity="0.6"
+      transform="scale({{scale}})" transform-origin="left top"></circle> -->
     <circle class="level__segment" cx="{{outerRadius}}" cy="{{outerRadius}}" r="{{innerRadius}}" fill="transparent" stroke="#ff8d30"
       stroke-width="{{strokeWidth}}" stroke-dasharray="{{ value }} {{ 100 - value }}" stroke-dashoffset="25"
       transform="scale({{scale}})" transform-origin="left top"></circle>

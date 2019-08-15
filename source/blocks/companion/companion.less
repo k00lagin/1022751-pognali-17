@@ -9,7 +9,23 @@
   position: relative;
   display: flex;
   align-items: center;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
+}
+
+.companion__photo {
+
+  @media @only-mobile {
+    border-radius: 50%;
+  }
+
+  @media @only-tablet {
+    border-radius: 10px;
+  }
+
+  @media @from-desktop {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
 }
 
 .companion__name {
@@ -18,6 +34,10 @@
   font-weight: bold;
   line-height: 1;
   position: relative;
+
+  @media @only-mobile {
+    width: calc(100% - 86px);
+  }
 }
 
 .companion__name--offline::before,

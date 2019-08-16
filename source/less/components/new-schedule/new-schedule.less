@@ -9,6 +9,36 @@
   margin: 0;
 }
 
+.new-schedule__add,
+.new-schedule__remove {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: @dark-slate-blue;
+  opacity: 0.3;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 14px;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+.new-schedule__add::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 14px;
+  background-color: currentColor;
+  margin-left: -8px;
+}
+
 .new-schedule__companions-label,
 .new-schedule__duration-label {
   font-size: 16px;

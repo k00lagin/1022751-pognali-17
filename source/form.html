@@ -58,11 +58,23 @@
             вы хотели бы позвать в поездку и ее предполагаемую длительность.
           </p>
           <label for="new-schedule__companions" class="new-schedule__companions-label">ищу попутчиков:</label>
+          <button type="button" class="new-schedule__remove new-schedule__remove--companion">
+            <span class="visually-hidden">Убрать одного попутчика</span>
+          </button>
           <input type="text" id="new-schedule__companions" class="new-schedule__companions" value=2>
 
+          <button type="button" class="new-schedule__add new-schedule__add--companion">
+            <span class="visually-hidden">Добавить одного попутчика</span>
+          </button>
           <label for="new-schedule__duration" class="new-schedule__duration-label">Длительность:</label>
+          <button type="button" class="new-schedule__remove new-schedule__remove--day">
+            <span class="visually-hidden">Убрать один день</span>
+          </button>
           <input type="text" id="new-schedule__duration" class="new-schedule__duration" value=2>
-
+          <button type="button" class="new-schedule__add new-schedule__add--day">
+            <span class="visually-hidden">Добавить один день</span>
+          </button>
+          
           <input type="checkbox" id="new-schedule__children-ok" class="children-ok" checked>
           <label for="new-schedule__children-ok" class="new-schedule__children-ok-label">Можно с детьми</label>
 

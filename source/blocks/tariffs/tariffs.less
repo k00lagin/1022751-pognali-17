@@ -34,16 +34,19 @@
 }
 
 .tariffs__table::after {
-  content: "";
-  display: block;
-  width: 99px;
-  height: 99px;
-  background-image: url("../img/sprite.svg#rates");
+    @media @from-tablet {
+    content: "";
+    display: block;
+    width: 99px;
+    height: 99px;
+    background-image: url("../img/sprite.svg#rates");
+    position: absolute;
+    right: 46px;
+  }
 
   @media @from-desktop {
     width: 198px;
     height: 198px;
-    position: absolute;
     right: 130px;
     top: 0;
   }

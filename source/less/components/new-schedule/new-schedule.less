@@ -21,12 +21,21 @@
   color: @dark-slate-blue;
   opacity: 0.3;
 
+  @media @from-tablet {
+    width: 70px;
+    height: 70px;
+  }
+
   &::before {
     content: "";
     display: block;
     width: 14px;
     height: 2px;
     background-color: currentColor;
+
+    @media @from-tablet {
+      width: 20px;
+    }
   }
 }
 
@@ -37,6 +46,11 @@
   height: 14px;
   background-color: currentColor;
   margin-left: -8px;
+
+  @media @from-tablet {
+    height: 20px;
+    margin-left: -11px;
+  }
 }
 
 .new-schedule__companions-label,

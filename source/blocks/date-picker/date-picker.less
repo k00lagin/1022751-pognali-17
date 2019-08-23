@@ -1,3 +1,58 @@
+.month-picker {
+  min-height: 42px;
+  border-top: 1px solid @mischka;
+  border-bottom: 1px solid @mischka;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @media @from-tablet {
+    min-height: 85px;
+  }
+}
+
+.month-picker__previous,
+.month-picker__next {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  width: 24px;
+  background-size: 9px 17px;
+  background-repeat: no-repeat;
+
+  @media @from-tablet {
+    background-size: 15px 28px;
+  }
+
+  @media @from-desktop {
+    background-size: 18px 34px;
+  }
+}
+
+.month-picker__previous {
+  background-image: url("../img/sprite.svg#arrow-left");
+  background-position: left center;
+}
+
+.month-picker__next {
+  background-image: url("../img/sprite.svg#arrow-right");
+  background-position: right center;
+}
+
+.month-picker__current {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  color: @dark-slate-blue;
+  display: flex;
+  align-items: center;
+
+  @media @from-tablet {
+    font-size: 36px;
+  }
+}
+
 .date-picker {
   
 }
@@ -7,11 +62,33 @@
   min-width: 210px;
 }
 
+.date-picker__header {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
 .date-picker__weekday {
-  font-size: 14px;
+  display: block;
+  min-width: 30px;
+  width: 14.285%;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  font-size: 0px;
   line-height: 1.29;
   text-align: center;
   color: @greyish-brown;
+
+  @media @only-mobile {
+    &::first-letter {
+      font-size: 14px;
+    }
+  }
+
+  @media @from-tablet {
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: 1.8px;
+  }
 }
 
 .date-picker__weekday--weekend {
@@ -31,8 +108,9 @@
   font-size: 14px;
   line-height: 1.29;
 
-  &:not(:nth-child(7n)) {
+  &:not(:nth-child(7n + 1)) {
     margin-right: -1px;
+    width: calc(14.285% + 1px);
   }
 
   &:not(:nth-last-child(-n + 7)) {

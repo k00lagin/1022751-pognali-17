@@ -2,10 +2,73 @@
   color: @greyish-brown;
   background-color: @pale-grey;
   padding: 25px;
+
+  @media @from-tablet {
+    background-image: url("../img/flags-back@1x.png");
+    background-repeat: no-repeat;
+    background-size: 289px 575px;
+    background-position: right top;
+  }
+
+  @media @from-tablet-2x {
+    background-image: url("../img/flags-back@2x.png");
+    background-repeat: no-repeat;
+  }
+
+  @media @from-desktop {
+    //
+  }
 }
 
 .directions__heading {
 
 }
 
-.directions__disclaimer {}
+.directions__disclaimer {
+  @media @from-tablet {
+    width: 340px;
+  }
+}
+
+.direction__slogan {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.13;
+  width: 100%;
+
+  @media @from-tablet {
+    font-size: 20px;
+    line-height: 0.88;
+  }
+}
+
+.direction__travellers {
+  opacity: 0.3;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.88;
+  color: @greyish-brown;
+
+  @media @from-tablet {
+    font-size: 20px;
+    line-height: 1.5;
+    order: 1;
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin-right: 8px;
+    background-image: url("../img/sprite.svg#user");
+    background-size: 11px 11px;
+    opacity: 0.3;
+
+    @media @from-tablet {
+      width: 20px;
+      height: 20px;
+      background-size: 20px 20px;
+    }
+  }
+}

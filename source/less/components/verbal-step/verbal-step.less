@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  position: relative;
   // justify-content: space-between;
 
   &::before {
@@ -11,7 +12,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: currentColor;
+    background-color: @dark-slate-blue;
     // top: 8px;
     // left: -9px;
 
@@ -20,8 +21,33 @@
       height: 15px;
     }
   }
+
+  &:not(:last-child)::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 277px;
+    width: 15px;
+    border: 2px solid @dark-slate-blue;
+    border-right: 0;
+    top: 32px;
+    left: -15px;
+
+    @media @only-tablet {
+      display: none;
+    }
+
+    @media @from-desktop {
+      left: unset;
+      right: 384px;
+      border-top: 0;
+      border-bottom: 0;
+      border-width: 3px;
+    }
+  }
 }
 
+.verbal-schedule__step.verbal-step
 .verbal-step__heading {
   font-size: 18px;
   font-weight: 500;

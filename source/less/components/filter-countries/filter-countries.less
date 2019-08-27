@@ -1,0 +1,64 @@
+.filter-countries {
+  
+}
+
+.filter-countries__land {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.38;
+  color: @dark-blue-grey;
+  opacity: 0.3;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  @media @from-tablet {
+    font-size: 20px;
+    line-height: 1.2;    
+  }
+}
+
+.filter-countries__land--active {
+  opacity: 1;
+}
+
+.filter-countries__alphabet {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.filter-countries__letter {
+  width: 45px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: @dark-slate-blue;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: 1.4px;
+
+  @media @only-mobile {
+    border: 1px solid @cloudy-blue; 
+  }
+
+  @media @from-tablet {
+    color: @dark-blue-grey;
+    opacity: 0.3;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 0.4;  
+  }
+}
+
+.filter-countries__letter--active {
+  @media @only-mobile {
+    background-color: @dark-slate-blue;
+    color: @white;
+  }
+  
+  @media @from-tablet {
+    opacity: 1;   
+  }
+}

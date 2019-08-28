@@ -1,7 +1,10 @@
 <li class="companions-list__item featured-companion">
   <img src="img/{{companion.avatar}}-desktop@1x.jpg" alt="Аватарка" class="companion__photo">
   {{ places("featured-companion", companion.directions, true) }}
-  <h3 class="featured-companion__name featured-companion__name--offline">{{companion.name}}</h3>
+  <h3 class="featured-companion__name featured-companion__name--offline">
+    <span class="companion__first-name">{{companion.firstName}}</span>
+    <span class="companion__lastName">{{companion.lastName}}</span>
+  </h3>
   {{ tags("featured-companion", companion.tags) }}
   {{ transport("featured-companion", companion.transport) }}
   {{ level("level--dark featured-companion", companion.level, 30, 3) }}

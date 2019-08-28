@@ -1,20 +1,22 @@
 {
   "companions": [{
       "avatar": "firsova",
-      "name": "Таня Фирсова",
-      "n": "1,5 m",
+      "firstName": "Таня",
+      "lastName": "Фирсова",
       "tags": ["ЗОЖ", "ПП", "Фитнес", "пляж", "авокадо", "смузи"],
       "directions": ["Sri-Lanka", "Thailand", "Seychelles"],
       "transport": {
         "plane": true
       },
+      "likesAmount": "1,5 m",
+      "isLiked": true,
       "level": 99
     },
 
     {
       "avatar": "demin",
-      "name": "Петя Демин",
-      "n": "150",
+      "firstName": "Петя",
+      "lastName": "Демин",
       "tags": ["бургер", "бар", "футбол", "концерт", "крафт"],
       "directions": ["Belgium", "Czech"],
       "transport": {
@@ -22,38 +24,45 @@
         "bus": true,
         "foot": true
       },
+      "likesAmount": "150",
+      "isLiked": false,
       "level": 80
     },
 
     {
       "avatar": "smolov",
-      "name": "Марк Смолов",
-      "n": "1700",
+      "firstName": "Марк",
+      "lastName": "Смолов",
       "tags": ["рэп", "тату", "хайпбист", "кроссовки", "суприм"],
       "directions": ["USA", "Australia", "Dominica"],
       "transport": {
         "plane": true,
         "bike": true
       },
+      "likesAmount": "1700",
+      "isLiked": false,
       "level": 25
     },
 
     {
       "avatar": "rogovaya",
-      "name": "Лариса Роговая",
-      "n": "23",
+      "firstName": "Лариса",
+      "lastName": "Роговая",
       "tags": ["образование", "карьера", "учеба", "линкедин"],
       "directions": ["United-Kingdom", "Germany"],
       "transport": {
         "plane": true,
         "bus": true
       },
+      "likesAmount": "23",
+      "isLiked": false,
       "level": 50
     }
   ],
   "myprofile": {
     "avatar": "demin",
-    "name": "Петя Демин",
+    "firstName": "Петя",
+    "lastName": "Демин",
     "n": "150",
     "tags": ["бургер", "бар", "футбол", "концерт", "крафт"],
     "directions": ["Belgium", "Czech"],

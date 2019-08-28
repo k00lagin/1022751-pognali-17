@@ -5,10 +5,15 @@
     <source media="(min-width: 1440px)" srcset="img/{{companion.avatar}}-desktop@1x.jpg 1x, img/{{companion.avatar}}-desktop@2x.jpg 2x">
     <img src="img/photo-account-mobile@1x.jpg" alt="Аватарка" class="companion__photo">
   </picture>
-  <h3 class="companion__name companion__name--offline">{{companion.name}}</h3>
+  <h3 class="companion__name companion__name--offline">
+    <span class="companion__first-name">{{companion.firstName}}</span>
+    <span class="companion__lastName">{{companion.lastName}}</span>
+  </h3>
   {{ places("companion", companion.directions) }}
   {{ transport("companion", companion.transport) }}
   {{ tags("companion", companion.tags) }}
   {{ level("companion", companion.level, 30, 3) }}
   <a href="#" class="companion__invitable button">Позвать!</a>
+  <button type="button" class="companion__like{% if companion.isLiked %} companion__like--avtive{% endif %}"></button>
+  <span class="companion__likes-amount">{{companion.likesAmount}}</span>
 </li>

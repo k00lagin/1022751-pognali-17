@@ -24,10 +24,22 @@
 .filter-countries__alphabet {
   display: flex;
   flex-flow: row wrap;
+  padding: 0 50px;
+
+  @media @only-tablet {
+    //width: 400px;
+    height: 400px;
+    flex-flow: column wrap;
+    align-content: flex-start;
+  }
+
+  @media @from-desktop {
+    padding: 0 125px 0 0;
+  }
 }
 
 .filter-countries__letter {
-  width: 45px;
+  width: calc(20% - 1px);
   height: 42px;
   display: flex;
   justify-content: center;
@@ -38,6 +50,7 @@
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: 1.4px;
+  box-sizing: border-box;
 
   @media @only-mobile {
     border: 1px solid @cloudy-blue; 
@@ -48,7 +61,81 @@
     opacity: 0.3;
     font-size: 60px;
     font-weight: bold;
-    line-height: 0.4;  
+    line-height: 0.4;
+    
+    width: 80px;
+    height: 80px;
+  }
+
+  @media @from-desktop {
+    opacity: 1;
+    width: 213px;
+    justify-content: flex-start;
+  }
+}
+
+@media @only-tablet {
+  .filter-countries__letter:not([class*="filter-countries__letter--col"]) {
+    display: none;
+  }
+
+  .filter-countries__letter--col-1 {
+    order: 1;
+  }
+
+  .filter-countries__letter--col-2 {
+    order: 2;
+  }
+
+  .filter-countries__letter--col-3 {
+    order: 3;
+  }
+
+  .filter-countries__letter--col-4 {
+    order: 4;
+  }
+
+  .filter-countries__letter--col-5 {
+    order: 5;
+    margin-right: 100px;
+  }
+}
+
+@media @from-desktop {
+  .filter-countries__letter:not([class*="filter-countries__letter--row"]) {
+    display: none;
+  }
+
+  .filter-countries__letter--row-1 {
+    order: 1;
+  }
+
+  .filter-countries__letter--row-2 {
+    order: 3;
+  }
+
+  .filter-countries__letter--row-3 {
+    order: 5;
+  }
+
+  .filter-countries__letter--row-4 {
+    order: 7;
+  }
+
+  .filter-countries__letter--row-1 + .filter-countries__list {
+    order: 2;
+  }
+
+  .filter-countries__letter--row-2 + .filter-countries__list {
+    order: 4;
+  }
+
+  .filter-countries__letter--row-3 + .filter-countries__list {
+    order: 6;
+  }
+
+  .filter-countries__letter--row-4 + .filter-countries__list {
+    order: 8;
   }
 }
 
@@ -59,6 +146,32 @@
   }
   
   @media @from-tablet {
-    opacity: 1;   
+    opacity: 1;
+  }
+}
+
+.filter-countries__list {
+  display: none;
+  font-size: 16px;
+  line-height: 1.38;
+  color: @greyish-brown;
+
+  @media @from-tablet {
+    font-size: 20px;
+    line-height: 1.5;  
+  }
+
+  @media @from-desktop {
+    display: unset;
+    width: 180px;
+    margin-right: 33px;
+  }
+}
+
+.filter-countries__list--a {
+  display: unset;
+
+  @media @to-desktop {
+    order: 6;
   }
 }

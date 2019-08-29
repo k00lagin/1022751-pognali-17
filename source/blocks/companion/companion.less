@@ -12,11 +12,17 @@
   flex-flow: row wrap;
 }
 
+.companion__picture {
+  @media @only-mobile {
+    order: -2;
+  }
+}
+
 .companion__photo {
   @media @only-mobile {
     border-radius: 50%;
     width: 70px;
-    height: 70px;
+    height: 70px;    
   }
 
   @media @only-tablet {
@@ -47,6 +53,7 @@
     display: flex;
     flex-flow: column wrap;
     width: calc(100% - 70px);
+    order: -2;
   }
 }
 
@@ -86,6 +93,10 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  @media @only-mobile {
+    order: -1;
+  }
+
   @media @only-tablet {
     width: 50px;
     height: 50px;
@@ -97,12 +108,22 @@
   background-image: url("../img/sprite.svg#heart-active-tomato");
 }
 
+.companion__likes-amount {
+  @media @only-mobile {
+    order: -1;
+  }
+}
+
 .companion__tags {
   list-style: none;
   padding: 0;
   margin: 0 auto 27px;
   width: calc(100% - 64px);
   text-align: center;
+
+  @media @only-mobile {
+    width: 100%;
+  }
 }
 
 .companion__tags .tags__item {
@@ -117,5 +138,23 @@
 
   &::before {
     content: "#";
+  }
+}
+
+.companion__call {
+  @media @only-mobile {
+    order: 1;
+  }
+}
+
+.companion__places {
+  @media @only-mobile {
+    width: 100%;
+  }
+}
+
+.companion__transport-list {
+  @media @only-mobile {
+    width: calc(100% - 45px);
   }
 }

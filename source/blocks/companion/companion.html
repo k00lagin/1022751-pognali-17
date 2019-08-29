@@ -9,11 +9,15 @@
     <span class="companion__first-name">{{companion.firstName}}</span>
     <span class="companion__lastName">{{companion.lastName}}</span>
   </h3>
-  {{ places("companion", companion.directions) }}
-  {{ transport("companion", companion.transport) }}
+ 
   {{ tags("companion", companion.tags) }}
-  {{ level("companion", companion.level, 30, 3) }}
-  <a href="#" class="companion__invitable button">Позвать!</a>
+  <a href="#" class="companion__call button">Позвать!</a>
   <button type="button" class="companion__like{% if companion.isLiked %} companion__like--avtive{% endif %}"></button>
   <span class="companion__likes-amount">{{companion.likesAmount}}</span>
+  <section class="companion__places places">
+    <h4 class="places__heading">Хочет посетить</h4>
+    {{ places("companion", companion.directions) }}
+  </section>   
+  {{ transport("companion", companion.transport) }}
+  {{ level("companion", companion.level, 30, 3) }}
 </li>

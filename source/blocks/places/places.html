@@ -1,12 +1,10 @@
-{% macro places(parent, places, isTextHidden = false) %}
-<section class="{{parent}}__places places">
-  <h4 class="places__heading">Хочет посетить</h4>
-  <ul class="{{parent}}__list visit-wishes" aria-label="Хочет отправиться в страны:">
-    {% for direction in directions %}
-    <li class="visit-wishes__item visit-wishes__item--{{ direction | lower }}">
-      <span class="visually-hidden">{{direction}}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+{% macro places(parent, places) %}
+<ul class="{{parent}}__list visit-wishes" aria-label="Хочет посетить">
+  {% for place in places %}
+  <li class="visit-wishes__item visit-wishes__item--{{ place | lower }}">
+    <img src="img/sprite.svg#flag-{{place | lower}}" alt="" width="26" height="18" title="{{place}}">
+    <span class="visually-hidden">{{place}}</span>
+  </li>
+  {% endfor %}
+</ul>
 {% endmacro %}

@@ -27,7 +27,6 @@
   padding: 0 50px;
 
   @media @only-tablet {
-    //width: 400px;
     height: 400px;
     flex-flow: column wrap;
     align-content: flex-start;
@@ -35,6 +34,14 @@
 
   @media @from-desktop {
     padding: 0 125px 0 0;
+  }
+}
+
+@media @only-tablet {
+  @supports (-moz-appearance:none) {
+    .filter-countries__alphabet {
+      height: unset;
+    }
   }
 }
 

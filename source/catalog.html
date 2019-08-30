@@ -303,19 +303,22 @@
 
       <form action="https://echo.htmlacademy.ru">
 
-        <details class="filter-companions__by-hobby filter-by-hobby">
-          <summary id="filter-companions__by-hobby" class="filter-by-hobby__title">Хобби</summary>
+        <section class="filter-companions__section filter-by-hobby">
+          <input type="checkbox" name="" id="fake-button--hobby" class="fake-button fake-button--hobby">
+          <label for="fake-button--hobby" class="filter-companions__subheading">Хобби</label>
           <fieldset>
             <legend aria-labelledby="filter-companions__by-hobby" class="visually-hidden"></legend>
             <input type="checkbox" name="hobby" id="hobby--option-1">
-            <label for="hobby--option-1">Первая опция</label>
+            <label for="hobby--option-1">Спортзал</label>
             <input type="checkbox" name="hobby" id="hobby--option-2">
-            <label for="hobby--option-2">Вторая опция</label>
+            <label for="hobby--option-2">Кальян</label>
+            <input type="checkbox" name="hobby" id="hobby--option-3">
+            <label for="hobby--option-3">Диван</label>
           </fieldset>
-        </details>
+        </section>
 
-        <details class="filter-companions__by-music-taste filter-by-music">
-          <summary id="filter-companions__by-music-taste" class="filter-by-music__title">Музыка</summary>
+        <section class="filter-companions__section filter-by-music">
+          <h3 id="filter-companions__by-music-taste" class="filter-companions__subheading">Музыка</h3>
           <fieldset>
             <legend aria-labelledby="filter-companions__by-music-taste" class="visually-hidden"></legend>
             <input type="checkbox" name="music" id="music--hard-rock">
@@ -325,21 +328,23 @@
             <input type="checkbox" name="music" id="music--eurodance">
             <label for="music--eurodance">Евроденс</label>
           </fieldset>
-        </details>
+        </section>
 
-        <details class="filter-companions__by-food filter-by-food">
-          <summary id="filter-companions__by-food" class="filter-by-food__title">Еда</summary>
+        <section class="filter-companions__section filter-by-food">
+          <h3 id="filter-companions__by-food" class="filter-companions__subheading">Еда</h3>
           <fieldset>
             <legend aria-labelledby="filter-companions__by-food" class="visually-hidden"></legend>
             <input type="checkbox" name="food" id="food--option-1">
-            <label for="food--option-1">Первая опция</label>
+            <label for="food--option-1">Мясоед</label>
             <input type="checkbox" name="food" id="food--option-2">
-            <label for="food--option-2">Вторая опция</label>
+            <label for="food--option-2">Сидит на ПП</label>
+            <input type="checkbox" name="food" id="food--option-3">
+            <label for="food--option-3">Веган-сыроед</label>
           </fieldset>
-        </details>
+        </section>
 
-        <details class="filter-companions__by-transport filter-by-transport">
-          <summary id="filter-companions__by-transport" class="filter-by-transport__title">Транспорт</summary>
+        <section class="filter-companions__section filter-by-transport">
+          <h3 id="filter-companions__by-transport" class="filter-companions__subheading">Транспорт</h3>
           <fieldset>
             <legend aria-labelledby="filter-companions__by-transport" class="visually-hidden"></legend>
             <input type="checkbox" name="transport" id="transport--plane">
@@ -351,16 +356,16 @@
             <input type="checkbox" name="transport" id="transport--foot">
             <label for="transport--foot">Пешком</label>
           </fieldset>
-        </details>
+        </section>
 
-        <details class="filter-companions__by-level filter-by-level">
-          <summary id="filter-companions__by-level" class="filter-by-level__title">Левел</summary>
+        <section class="filter-companions__section filter-by-level">
+          <h3 id="filter-companions__by-level" class="filter-companions__subheading">Левел</h3>
           <fieldset>
             <legend aria-labelledby="filter-companions__by-level" class="visually-hidden"></legend>
             <input type="text" name="level" id="level--min" aria-label="Минимальный уровень">
             <input type="text" name="level" id="level--max" aria-label="Максимальный уровень">
           </fieldset>
-        </details>
+        </section>
 
         <button type="submit" class="filter-companions__submit button button--white">Показать</button>
       </form>

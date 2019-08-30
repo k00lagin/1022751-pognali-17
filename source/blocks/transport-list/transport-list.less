@@ -69,17 +69,26 @@
 
 .transport-list--editable .transport-list__item--foot {
   background-size: 20px 21px;
-
-  @media @only-mobile {
-    border-radius: 50%;
-    background-color: @pale-grey;
-  }
 }
 
 .transport-list--catalog .transport-list__item {
   width: 32px;
   height: 32px;
+  opacity: 1;
+
+  @media @only-mobile {
+    border-radius: 50%;
+    background-color: @pale-grey;
+    box-shadow: inset -32px 0 0 0 @pale-grey-85;
+  }
 }
+
+.transport-list--catalog .transport-list__item--active {
+  @media @only-mobile {
+    box-shadow: inset -32px 0 0 0 transparent;
+  }
+}
+
 
 .transport-list--catalog .transport-list__item--plane {
   background-size: 14px 16px;

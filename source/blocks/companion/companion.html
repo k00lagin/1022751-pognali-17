@@ -9,22 +9,23 @@
     <span class="companion__first-name">{{companion.firstName}}</span>
     <span class="companion__lastName">{{companion.lastName}}</span>
   </h3>
- 
+
   {{ tags("companion", companion.tags) }}
   <a href="#" class="companion__call button">Позвать!</a>
   <button type="button" class="companion__like{% if companion.isLiked %} companion__like--avtive{% endif %}"></button>
   <span class="companion__likes-amount">{{companion.likesAmount}}</span>
+  <hr class="companion__vertical-line">
   <section class="companion__places places">
     <h4 class="places__heading">хочет посетить:</h4>
     {{ places("companion", companion.directions) }}
   </section>
   <section class="companion__transport">
-    <h4 class="transport__heading">транспорт:</h4>    
-    {{ transport("companion", companion.transport) }}
+    <h4 class="transport__heading">транспорт:</h4>
+    {{ transport("transport-list--catalog companion", companion.transport) }}
   </section>
   <section class="companion__level">
-      <h4 class="level__heading">левел:</h4>    
+      <h4 class="level__heading">левел:</h4>
       {{ level("companion", companion.level, 30, 3) }}
   </section>
-  
+
 </li>

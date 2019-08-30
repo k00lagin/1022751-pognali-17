@@ -69,4 +69,46 @@
 
 .transport-list--editable .transport-list__item--foot {
   background-size: 20px 21px;
+
+  @media @only-mobile {
+    border-radius: 50%;
+    background-color: @pale-grey;
+  }
+}
+
+.transport-list--catalog .transport-list__item {
+  width: 32px;
+  height: 32px;
+}
+
+.transport-list--catalog .transport-list__item--plane {
+  background-size: 14px 16px;
+
+  @media @from-tablet {
+    background-size: 19px 21px;
+  }
+}
+
+.transport-list--catalog .transport-list__item--bus {
+  background-size: 13px 16px;
+
+  @media @from-tablet {
+    background-size: 17px 21px;
+  }
+}
+
+.transport-list--catalog .transport-list__item--bike {
+  background-size: 19px 17px;
+
+  @media @from-tablet {
+    background-size: 24px 21px;
+  }
+}
+
+.transport-list--catalog .transport-list__item--foot {
+  background-size: 15px 17px;
+
+  @media @from-tablet {
+    background-size: 20px 21px;
+  }
 }

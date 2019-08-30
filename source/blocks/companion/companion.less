@@ -10,6 +10,12 @@
   display: flex;
   align-items: center;
   flex-flow: row wrap;
+
+  @media @from-desktop {
+    width: 950px;
+    height: 285px;
+    flex-flow: column wrap;
+  }
 }
 
 .companion__picture {
@@ -22,7 +28,7 @@
   @media @only-mobile {
     border-radius: 50%;
     width: 70px;
-    height: 70px;    
+    height: 70px;
   }
 
   @media @only-tablet {
@@ -114,6 +120,16 @@
   }
 }
 
+.companion__vertical-line {
+  margin: 0;
+  width: 0;
+  flex-basis: 100%;
+
+  @media @to-desktop {
+    display: none;
+  }
+}
+
 .companion__tags {
   list-style: none;
   padding: 0;
@@ -123,6 +139,11 @@
 
   @media @only-mobile {
     width: 100%;
+  }
+
+  @media @from-desktop {
+    width: 280px;
+    margin-bottom: auto;
   }
 }
 

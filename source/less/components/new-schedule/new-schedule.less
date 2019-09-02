@@ -61,6 +61,7 @@
   letter-spacing: 1.6px;
   color: @dark-slate-blue;
   text-transform: uppercase;
+  width: 100%;
 
   @media @from-tablet {
     font-size: 20px;
@@ -87,7 +88,8 @@
 
 .new-schedule__companions,
 .new-schedule__duration {
-  width: 100%;
+  width: calc(100% - 86px);
+  height: 43px;
   border-radius: 4px;
   border: 1px solid @cloudy-blue;
   padding: 20px;
@@ -99,4 +101,8 @@
   text-align: center;
   color: @dark-slate-blue;
 
+  @media @from-tablet {
+    height: 70px;
+    width: calc(100% - 140px);
+  }
 }

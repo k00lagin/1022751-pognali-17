@@ -303,10 +303,11 @@
 
       <form action="https://echo.htmlacademy.ru">
 
-        <section class="filter-companions__section filter-by-hobby">
-          <input type="checkbox" name="" id="fake-button--hobby" class="filter-companions__fake-button filter-companions__fake-button--hobby visually-hidden">
-          <label for="fake-button--hobby" class="filter-companions__subheading">Хобби</label>
-          <fieldset>
+        <section class="filter-companions__section" aria-labelledby="filter-companions__by-hobby-subheading">
+          <input type="checkbox" name="" id="fake-button--hobby"
+            class="filter-companions__fake-button visually-hidden" role="button" aria-haspopup="true">
+          <label for="fake-button--hobby" class="filter-companions__subheading" id="filter-companions__by-hobby-subheading">Хобби</label>
+          <fieldset class="filter-companions__inputs" aria-labelledby="filter-companions__by-hobby-subheading">
             <legend aria-labelledby="filter-companions__by-hobby" class="visually-hidden"></legend>
             <input type="checkbox" name="hobby" id="hobby--option-1">
             <label for="hobby--option-1">Спортзал</label>
@@ -317,9 +318,10 @@
           </fieldset>
         </section>
 
-        <section class="filter-companions__section filter-by-music">
-          <h3 id="filter-companions__by-music-taste" class="filter-companions__subheading">Музыка</h3>
-          <fieldset>
+        <section class="filter-companions__section filter-by-music" aria-labelledby="filter-companions__by-music-subheading">
+          <input type="checkbox" name="" id="fake-button--music" class="filter-companions__fake-button visually-hidden">
+          <label for="fake-button--music" class="filter-companions__subheading" id="filter-companions__by-music-subheading">Музыка</label>
+          <fieldset class="filter-companions__inputs" aria-labelledby="filter-companions__by-music-subheading">
             <legend aria-labelledby="filter-companions__by-music-taste" class="visually-hidden"></legend>
             <input type="checkbox" name="music" id="music--hard-rock">
             <label for="music--hard-rock">Тяжелый рок</label>
@@ -330,9 +332,10 @@
           </fieldset>
         </section>
 
-        <section class="filter-companions__section filter-by-food">
-          <h3 id="filter-companions__by-food" class="filter-companions__subheading">Еда</h3>
-          <fieldset>
+        <section class="filter-companions__section filter-by-food" aria-labelledby="filter-companions__by-food-subheading">
+          <input type="checkbox" name="" id="fake-button--food" class="filter-companions__fake-button visually-hidden">
+          <label for="fake-button--food" class="filter-companions__subheading" id="filter-companions__by-food-subheading">Еда</label>
+          <fieldset class="filter-companions__inputs" aria-labelledby="filter-companions__by-food-subheading">
             <legend aria-labelledby="filter-companions__by-food" class="visually-hidden"></legend>
             <input type="checkbox" name="food" id="food--option-1">
             <label for="food--option-1">Мясоед</label>
@@ -343,9 +346,10 @@
           </fieldset>
         </section>
 
-        <section class="filter-companions__section filter-by-transport">
-          <h3 id="filter-companions__by-transport" class="filter-companions__subheading">Транспорт</h3>
-          <fieldset>
+        <section class="filter-companions__section filter-by-transport" aria-labelledby="filter-companions__by-transport-subheading">
+          <input type="checkbox" name="" id="fake-button--transport" class="filter-companions__fake-button visually-hidden">
+          <label for="fake-button--transport" class="filter-companions__subheading" id="filter-companions__by-transport-subheading">Транспорт</label>
+          <fieldset class="filter-companions__inputs" aria-labelledby="filter-companions__by-transport-subheading">
             <legend aria-labelledby="filter-companions__by-transport" class="visually-hidden"></legend>
             <input type="checkbox" name="transport" id="transport--plane">
             <label for="transport--plane">Самолётом</label>
@@ -358,12 +362,13 @@
           </fieldset>
         </section>
 
-        <section class="filter-companions__section filter-by-level">
-          <h3 id="filter-companions__by-level" class="filter-companions__subheading">Левел</h3>
-          <fieldset>
+        <section class="filter-companions__section filter-by-level" aria-labelledby="filter-companions__by-level-subheading">
+          <input type="checkbox" name="" id="fake-button--level" class="filter-companions__fake-button visually-hidden">
+          <label for="fake-button--level" class="filter-companions__subheading" id="filter-companions__by-level-subheading">Левел</label>
+          <fieldset class="filter-companions__inputs" aria-labelledby="filter-companions__by-level-subheading">
             <legend aria-labelledby="filter-companions__by-level" class="visually-hidden"></legend>
-            <input type="text" name="level" id="level--min" aria-label="Минимальный уровень">
-            <input type="text" name="level" id="level--max" aria-label="Максимальный уровень">
+            <input type="text" name="level" id="level--min" aria-label="Минимальный уровень" class="filter-by-level__input filter-by-level__input--min">
+            <input type="text" name="level" id="level--max" aria-label="Максимальный уровень" class="filter-by-level__input filter-by-level__input--max">
           </fieldset>
         </section>
 

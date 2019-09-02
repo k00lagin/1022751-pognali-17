@@ -30,6 +30,15 @@
   border-bottom: 4px solid @dark-blue-grey;
 }
 
+.filter-companions__inputs {
+  display: none;
+  border: 0;
+}
+
+.filter-companions__fake-button:checked ~ .filter-companions__inputs {
+  display: block;
+}
+
 .filter-companions__subheading {
   display: block;
   text-transform: uppercase;

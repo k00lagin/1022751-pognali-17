@@ -220,6 +220,18 @@
   <svg id="show-more-plus" class="icon" viewBox="0 0 27 27">
     <path d="M25.5 12H15V1.5c0-.8-.7-1.5-1.5-1.5S12 .7 12 1.5V12H1.5c-.8 0-1.5.7-1.5 1.5S.7 15 1.5 15H12v10.5c0 .8.7 1.5 1.5 1.5s1.5-.7 1.5-1.5V15h10.5c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z"/>
 	</svg>
+  <svg id="qty-minus" class="icon" viewBox="0 0 20 2" fill="#606161">
+    <path class="st0" d="M0 0h20v2H0z"/>
+  </svg>
+  <svg id="qty-minus-mobile" class="icon" viewBox="0 0 14 2" fill="#606161">
+    <path d="M0 0h14v2H0z"/>
+  </svg>
+  <svg id="qty-plus" class="icon" viewBox="0 0 20 20" fill="#606161">
+    <path d="M20 9h-9V0H9v9H0v2h9v9h2v-9h9z"/>
+  </svg>
+  <svg id="qty-plus-mobile" class="icon" viewBox="0 0 14 14" fill="#606161">
+    <path d="M8 6V0H6v6H0v2h6v6h2V8h6V6z"/>
+  </svg>
 
   <!-- OTHER -->
   <svg id="user" class="icon" viewBox="0 0 20 20" fill="#444444">

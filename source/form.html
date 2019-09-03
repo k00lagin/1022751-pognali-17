@@ -28,7 +28,8 @@
 
       <!-- adopt machine learning to provide more relevant image alts -->
       <picture class="my-profile__avatar">
-        <source media="(min-width: 768px)" srcset="img/photo-account-tablet@1x.jpg 1x, img/photo-account-tablet@2x.jpg 2x">
+        <source media="(min-width: 768px)"
+          srcset="img/photo-account-tablet@1x.jpg 1x, img/photo-account-tablet@2x.jpg 2x">
         <source media="(min-width: 1440px)" srcset="img/demin-tablet@1x.jpg 1x, img/demin-tablet@2x.jpg 2x">
         <img src="img/photo-account-mobile@1x.jpg" alt="Аватарка">
       </picture>
@@ -74,7 +75,7 @@
           <button type="button" class="new-schedule__add new-schedule__add--day">
             <span class="visually-hidden">Добавить один день</span>
           </button>
-          
+
           <input type="checkbox" id="new-schedule__children-ok" class="children-ok" checked>
           <label for="new-schedule__children-ok" class="new-schedule__children-ok-label">Можно с детьми</label>
 
@@ -88,10 +89,85 @@
           <p class="step__description">
             Укажите страны, которые вы хотели по посетить. Это может быть одна или сразу несколько.
           </p>
-          {{ selectDirection(2) }}
+          <div class="country-select">
+            <div class="country-select__country-name country-select__text country-select__dropdown">Босния и герцеговина
+            </div>
+            <div class="country-select__country-flag">
+              <img src="img/sprite.svg#flag-bosnia" alt="" width="35" height="24">
+            </div>
+            <button type="button" class="country-select__remove-country">
+              <span class="visually-hidden">Удалить страну</span>
+            </button>
+          </div>
 
-          {{ selectDirection(4) }}
-          <button type="submit" name="add-direction">Добавить страну</button>
+          <div class="country-select">
+            <div class="country-select__country-name country-select__text country-select__dropdown">Чехословакия</div>
+            <div class="country-select__country-flag">
+              <img src="img/sprite.svg#flag-czech" alt="" width="35" height="24">
+            </div>
+            <button type="button" class="country-select__remove-country">
+              <span class="visually-hidden">Удалить страну</span>
+            </button>
+          </div>
+
+          <div class="country-select country-select--empty">
+            <button type="button" class="country-select__text country-select__chose-trigger country-select__dropdown">
+              Выбрать страну
+            </button>
+            <div class="country-select__popup country-popup">
+              <div class="country-popup__alphabet">
+                <a href="#" class="country-popup__letter country-popup__letter--active">А</a>
+                <a href="#" class="country-popup__letter">Б</a>
+                <a href="#" class="country-popup__letter">В</a>
+                <a href="#" class="country-popup__letter">Г</a>
+                <a href="#" class="country-popup__letter">Д</a>
+                <a href="#" class="country-popup__letter">Е</a>
+                <a href="#" class="country-popup__letter">Ё</a>
+                <a href="#" class="country-popup__letter">Ж</a>
+                <a href="#" class="country-popup__letter">З</a>
+                <a href="#" class="country-popup__letter">И</a>
+                <a href="#" class="country-popup__letter">Й</a>
+                <a href="#" class="country-popup__letter">К</a>
+                <a href="#" class="country-popup__letter">Л</a>
+                <a href="#" class="country-popup__letter">М</a>
+                <a href="#" class="country-popup__letter">Н</a>
+                <a href="#" class="country-popup__letter">О</a>
+                <a href="#" class="country-popup__letter">П</a>
+                <a href="#" class="country-popup__letter">Р</a>
+                <a href="#" class="country-popup__letter">С</a>
+                <a href="#" class="country-popup__letter">Т</a>
+                <a href="#" class="country-popup__letter">У</a>
+                <a href="#" class="country-popup__letter">Ф</a>
+                <a href="#" class="country-popup__letter">Х</a>
+                <a href="#" class="country-popup__letter">Ц</a>
+                <a href="#" class="country-popup__letter">Ч</a>
+                <a href="#" class="country-popup__letter">Ш</a>
+                <a href="#" class="country-popup__letter">Щ</a>
+                <a href="#" class="country-popup__letter">Э</a>
+                <a href="#" class="country-popup__letter">Ю</a>
+                <a href="#" class="country-popup__letter">Я</a>
+                <p class="country-popup__list">
+                  Австралия<br>
+                  Австрия<br>
+                  Азербайджан<br>
+                  Албания<br>
+                  Алжир<br>
+                  Ангола<br>
+                  Андорра<br>
+                  Антигуа и Барбуда<br>
+                  Аргентина<br>
+                  Армения<br>
+                  Афганистан
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="country-select country-select--add">
+            <button type="submit" name="add-country" class="country-select__text country-select__add-trigger">Добавить
+              страну</button>
+          </div>
+
           <button type="submit" name="next-step" class="step__next button button--big">Следующий шаг</button>
           <button type="submit" name="previous-step" class="step__previous button button--text">На шаг назад</button>
         </form>
@@ -107,13 +183,14 @@
             <li class="verbal-schedule__step verbal-step">
               <h4 class="verbal-step__heading">Босния и герцеговина</h4>
               <img src="img/sprite.svg#flag-bosnia" alt="Флаг Чехии" class="verbal-step__flag" width="35" height="24">
-              <textarea name="verbal-step-1" id="" cols="30" rows="10" placeholder="План действий" class="verbal-step__description"></textarea>
+              <textarea name="verbal-step-1" id="" cols="30" rows="10" placeholder="План действий"
+                class="verbal-step__description"></textarea>
             </li>
             <li class="verbal-schedule__step verbal-step">
               <h4 class="verbal-step__heading">Чехословакия</h4>
               <img src="img/sprite.svg#flag-czech" alt="Флаг Чехии" class="verbal-step__flag" width="35" height="24">
-              <textarea name="verbal-step-2" id="" cols="30" rows="10"
-                placeholder="План действий" class="verbal-step__description">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
+              <textarea name="verbal-step-2" id="" cols="30" rows="10" placeholder="План действий"
+                class="verbal-step__description">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea>
             </li>
           </ul>
           <button type="submit" class="step__finish button button--big">Отправить</button>

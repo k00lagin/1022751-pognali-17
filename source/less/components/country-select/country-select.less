@@ -35,7 +35,39 @@
   background-size: 12px 7px;
   background-repeat: no-repeat;
   background-position: right 14px center;
-  cursor: pointer;
+  cursor: pointer;  
+}
+
+.country-select__dropdown[aria-expanded="true"] {
+  background-color: @dark-slate-blue;
+  color: @white;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-image: url("../img/sprite.svg#small-cross");
+  background-size: 9px 9px;
+  background-position: right 16px center;
+
+  @media @from-tablet {
+    background-size: 17px 17px;
+    background-position: right 27px center;
+  }
+
+  @media @from-desktop {
+    background-size: 18px 18px;
+    background-position: right 26px center;
+  }
+}
+
+.country-select__popup {
+  display: none;
+}
+
+.country-select__dropdown[aria-expanded="true"] + .country-select__popup {
+  display: block;
+
+  @media @from-tablet {
+    display: flex;
+  }
 }
 
 .country-select__country-flag {
